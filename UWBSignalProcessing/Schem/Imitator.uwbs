@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SchematicUWB>
+    <entry term="Block">
+        <entry term="Id">
+            <Id>0</Id>
+            <Type>TargetImitationBlock</Type>
+            <x>140</x>
+            <y>325</y>
+        </entry>
+        <entry term="OutPortBlock">
+            <Id>1</Id>
+            <InPort>1</InPort>
+            <otherId>2</otherId>
+        </entry>
+        <entry term="CountPorts">
+            <InPort>0</InPort>
+            <OutPort>1</OutPort>
+        </entry>
+    </entry>
+    <entry term="Block">
+        <entry term="Id">
+            <Id>2</Id>
+            <Type>TransmitterUDPBlock</Type>
+            <x>341</x>
+            <y>258</y>
+        </entry>
+        <entry term="InPortBlock">
+            <Id>1</Id>
+            <OutPort>1</OutPort>
+            <otherId>0</otherId>
+        </entry>
+        <entry term="CountPorts">
+            <InPort>1</InPort>
+            <OutPort>0</OutPort>
+        </entry>
+    </entry>
+</SchematicUWB>

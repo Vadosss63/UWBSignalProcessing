@@ -1,0 +1,197 @@
+*{color: #321D40;
+font:  12pt \"Century Schoolbook L\";
+}
+
+/* */
+QWidget#centralWidget{
+background: rgb(181, 165, 212);
+}
+
+QGraphicsTextItem{
+    color: #321D40;
+}
+
+QMainWindow{
+	background: rgb(181, 165, 212);
+}
+
+QToolBar{
+        spacing: 8px;
+	border-radius: 3px; 
+	border-right-color: rgb(0, 0, 0);
+}
+QTabWidget{
+ color: rgb(0, 0, 0);
+}
+
+QWidget[name="widgetPlusScheme"]{
+	background: rgb(181, 165, 212);
+}
+
+QTabBar::tab{
+        margin: 4 ;
+        padding: 10px;
+        background: rgb(160, 130, 190);
+        border-radius: 3px;
+        color: rgb(255, 255, 255);
+        border: 1px solid rgb(134, 101, 178);
+}
+QTabBar::tab:Selected{
+        background: rgb(134, 101, 178);
+}
+QToolBar:vertical{
+	background: qlineargradient(x1:1, y1:0, x2:0, y2:0, stop:0.85 rgb(181, 165, 212) stop:0.5 rgb(134, 101, 178), stop:0.15 rgb(181, 165, 212));
+}
+
+QToolBar:horizontal, QStatusBar, QMenuBar, QMenuBar::item, QSpinBox::up-button,QSpinBox::down-button {
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0.85 rgb(181, 165, 212) stop:0.5 rgb(134, 101, 178), stop:0.15 rgb(181, 165, 212));
+}
+QStatusBar::item{
+        border: none;
+}
+
+QGraphicsView, QListView{
+	background: #FAFAFA;
+	border: 3px solid rgb(134, 101, 178); 
+
+}
+QListView{
+        border-radius: 20px;
+}
+QGraphicsView{
+        border-radius: 3px;
+}
+QMenu {
+	background: rgb(134, 101, 178);
+}
+
+
+QPushButton[name="statusWorkShema"], QPushButton:hover[name="statusWorkShema"],QPushButton:pressed[name="statusWorkShema"],QPushButton:selected[name="statusWorkShema"]
+{
+	width: 30px;
+	height: 30px;
+ 	border-radius: 15px; 
+	padding: 3px;background: qlineargradient(x1:1, y1:1, x2:0, y2:0, stop:1 rgb(255, 255, 255), stop:0.6 rgb(255, 31, 33), stop:0 rgb(255, 255, 255));
+}
+
+QPushButton:disabled[name="statusWorkShema"]
+{
+	background: qlineargradient(x1:1, y1:1, x2:0, y2:0, stop:1 rgb(255, 255, 135), stop:0.6 rgb(31, 255, 33), stop:1 rgb(255, 255, 135));
+}
+
+QTextEdit{
+	padding: 10px;
+	border:none;
+}
+
+QSpinBox::down-button:pressed{
+	background-color: rgb(100, 0, 105);
+}
+QSpinBox::up-button:pressed{
+	background-color: rgb(100, 0, 105);
+}
+QSpinBox {
+	background-color: #ffffe9;  
+	border-style: outset;
+	border-width: 0px;
+	selection-background-color: #321D40; 
+	border: 2px solid #321D40; 
+	border-radius: 11px; 
+	}
+
+
+QSpinBox::up-button{
+	border: 2px solid  rgb(68, 0, 105);
+	border-top-right-radius: 10px;
+	border-top-left-radius: 3px;
+	subcontrol-position: top right;
+	subcontrol-origin: padding;
+	}
+ QSpinBox::down-button{
+	border: 2px solid  rgb(68, 0, 105);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 3px;
+	subcontrol-position: bottom right;
+	subcontrol-origin: padding;
+	}
+
+QPushButton {
+	border-radius: 10px; 
+	padding: 4px; 
+}
+
+QComboBox{
+	background-color: rgb(181, 165, 212);
+	border: none; 
+	border-top-left-radius: 10px; 
+	border-bottom-left-radius: 10px;
+ 	min-width: 130px; 
+	min-height: 18px; 
+}
+
+QPushButton, QDial {
+	background-color: rgb(181, 165, 212); 
+}
+
+
+QScrollBar::handle:vertical, QScrollBar::handle:horisontal{
+	background-color: rgb(130, 90, 178); 
+	margin: 10px;
+	padding 10px;
+}
+
+
+QPushButton:focus{
+	background-color:rgb(130, 90, 178);
+	border-image: none;
+}
+
+
+QAction{
+	background-color: rgb(181, 165, 212); 
+	color:white;
+}
+
+QGroupBox{
+	margin: 5 ;
+	border: 1px solid white; 
+	border-radius: 5px; 
+	padding: 10px 4px 4px 0px;  
+}
+
+QGroupBox::title { 
+	margin: 0 ; 
+	subcontrol-position: center top;
+}
+
+QPushButton:pressed{
+	background-color:green;
+	border: none;
+}
+
+QAbstractItemView{ 
+	border-radius: 0px;
+}
+
+QAbstractButton:hover{
+	background-color:rgb(130, 90, 178);
+	border: none;
+}
+QAbstractButton:hover{
+	background-color:rgb(130, 90, 178);
+	border: none;
+}
+
+QPalette::ToolTipBase{
+	background-color:green;
+	border: none;
+}
+
+QPalette::Highlight{
+	background-color:green;
+	border: none;
+}
+
+# QGraphicsView - боковое меню блоков
+# QGraphicsTextItem - надписи: источники, модули...
+

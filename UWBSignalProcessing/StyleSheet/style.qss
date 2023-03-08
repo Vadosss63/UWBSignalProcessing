@@ -1,0 +1,267 @@
+QGraphicsView[name="schemticsWindowView"]{
+	border: 2px groove gray;
+	border-radius: 10px;
+	padding: 6px 6px;
+} 
+
+QGraphicsView[name="PRLIView"], QGraphicsView[name="ScanDialog"]{
+	border: 2px solid white; 
+	border-radius: 10px; 
+        border: 1px solid white; 
+	border-radius: 5px;
+} 
+
+QTabWidget[name="PRLITabWidget"] *{
+	color: white; 
+	background-color: black;
+}
+
+QGroupBox[name="PRLIGroupBox"] *{
+	color: white;
+}
+
+QGroupBox[name="PRLIGroupBox"] QGroupBox{
+	margin: 5 ;
+	border: 1px solid white; 
+	border-radius: 5px;  
+	padding: 10px 4px 4px 0px;
+}
+
+QGroupBox[name="PRLIGroupBox"] QGroupBox::title { 
+	margin: 0 ; 
+	subcontrol-position: center top;
+}
+
+QGroupBox[name="PRLIGroupBox"] QPushButton { 
+	min-width: 16px; 
+	min-height: 28px; 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33,));
+	color: white; border: 1px solid white;
+	border-radius: 5px;
+}
+QGroupBox[name="PRLIGroupBox"] QPushButton:hover {
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33), stop:0.2 rgb(0, 0, 150,) );
+}
+QGroupBox[name="PRLIGroupBox"] QPushButton:pressed {
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 1, 5, 80), stop:0.6 rgba(18, 18, 212, 80), stop:0.5 rgba(142, 142, 245, 80) );
+	border: 1px solid rgb(18, 18, 212);
+}
+
+
+PanelScan[name="PRLIPanelScan"] *{
+	color: white;
+} 
+ PanelScan[name="ScanDialogPanelScan"] *{
+        color: white;
+}
+PanelScan[name="PRLIPanelScan"] QGroupBox{
+     margin: 5 ;
+     border: 1px solid white;
+     border-radius: 5px;
+     padding: 10px 4px 4px 0px;
+}
+
+PanelScan[name="ScanDialogPanelScan"] QGroupBox{
+	margin: 5 ;
+	border: 1px solid white; 
+	border-radius: 5px;  
+	padding: 10px 4px 4px 0px;  
+} 
+
+PanelScan[name="PRLIPanelScan"] QGroupBox::title{
+        margin: 0 ;
+	subcontrol-position: center top;
+}
+
+PanelScan[name="ScanDialogPanelScan"] QGroupBox::title{
+        margin: 0 ;
+        subcontrol-position: center top;
+}
+  
+PanelScan[name="PRLIPanelScan"] QPushButton{
+	min-width: 16px; 
+	min-hea; 
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33,));
+	color: white; border: 1px solid white; border-radius: 5px;
+}
+PanelScan[name="ScanDialogPanelScan"] QPushButton{
+        min-width: 16px;
+        min-hea;
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33,));
+        color: white; border: 1px solid white; border-radius: 5px;
+}
+
+PanelScan[name="PRLIPanelScan"] QPushButton:hover{
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33), stop:0.2 rgb(0, 0, 150,) );
+} 
+
+PanelScan[name="ScanDialogPanelScan"] QPushButton:hover{
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33), stop:0.2 rgb(0, 0, 150,) );
+}
+
+PanelScan[name="PRLIPanelScan"] QPushButton:pressed{
+	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 1, 5, 80), stop:0.6 rgba(18, 18, 212, 80), stop:0.5 rgba(142, 142, 245, 80) );
+	border: 1px solid rgb(18, 18, 212);
+}
+
+
+PanelScan[name="ScanDialogPanelScan"] QPushButton:pressed{
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 1, 5, 80), stop:0.6 rgba(18, 18, 212, 80), stop:0.5 rgba(142, 142, 245, 80) );
+        border: 1px solid rgb(18, 18, 212);
+}
+
+SettingScan[name="SettingScanPRLI"] QPushButton:pressed{
+    background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 1, 5, 80), stop:0.6 rgba(18, 18, 212, 80), stop:0.5 rgba(142, 142, 245, 80) );
+    border: 1px solid rgb(18, 18, 212);
+}
+SettingScan[name="SettingScanPRLI"] QPushButton:hover{
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33), stop:0.2 rgb(0, 0, 150,) );
+}
+
+SettingScan[name="SettingScanPRLI"] QPushButton{
+        min-width: 16px;
+        min-hea;
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33,));
+        color: white; border: 1px solid white; border-radius: 5px;
+}
+
+PanelScan[name="PRLIPanelScan"] QCheckBox::indicator:unchecked{
+        border: 1px solid white;
+}
+
+PanelScan[name="ScanDialogPanelScan"] QCheckBox::indicator:unchecked{
+        border: 1px solid white;
+}
+
+SettingScan[name="SettingScanPRLI"] QCheckBox::indicator:unchecked{
+        border: 1px solid white;
+}
+
+
+PanelScan[name="PRLIPanelScan"] QCheckBox{
+	color: white; 
+	background-color: black;
+} 
+PanelScan[name="ScanDialogPanelScan"] QCheckBox{
+        color: white;
+        background-color: black;
+}
+
+
+PanelScan[name="PRLIPanelScan"] QComboBox{
+	background-color: black;
+} 
+
+PanelScan[name="ScanDialogPanelScan"] QComboBox{
+        background-color: black;
+}
+
+PanelScan[name="ScanDialogPanelScan"] QSpinBox, PanelScan[name="PRLIPanelScan"] QSpinBox{
+    color: white;
+    background-color: black;
+    border-style: outset;
+    border-width: 0px;
+    border: 1px solid white;
+    border-radius: 11px;
+}
+
+PanelScan[name="ScanDialogPanelScan"] QSpinBox::up-button, PanelScan[name="PRLIPanelScan"] QSpinBox::up-button{
+    border: 1px solid  white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 3px;
+    subcontrol-position: top right;
+    subcontrol-origin: padding;
+}
+
+PanelScan[name="ScanDialogPanelScan"] QSpinBox::up-button:pressed, PanelScan[name="PRLIPanelScan"] QSpinBox::up-button:pressed {
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 1, 5, 80), stop:0.6 rgba(18, 18, 212, 80), stop:0.5 rgba(142, 142, 245, 80) );
+        border: 1px solid rgb(18, 18, 212);
+}
+PanelScan[name="ScanDialogPanelScan"] QSpinBox::up-button:hover, PanelScan[name="PRLIPanelScan"] QSpinBox::up-button:hover{
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33), stop:0.2 rgb(0, 0, 150,) );
+}
+
+PanelScan[name="ScanDialogPanelScan"] QSpinBox::down-button, PanelScan[name="PRLIPanelScan"] QSpinBox::down-button{
+    border: 1px solid  white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 3px;
+    subcontrol-position: bottom right;
+    subcontrol-origin: padding;
+}
+PanelScan[name="ScanDialogPanelScan"] QSpinBox::down-button:pressed, PanelScan[name="PRLIPanelScan"] QSpinBox::down-button:pressed{
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 1, 5, 80), stop:0.6 rgba(18, 18, 212, 80), stop:0.5 rgba(142, 142, 245, 80) );
+        border: 1px solid rgb(18, 18, 212);
+}
+
+PanelScan[name="ScanDialogPanelScan"] QSpinBox::down-button:hover, PanelScan[name="PRLIPanelScan"] QSpinBox::down-button:pressed{
+        background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:1 rgb(133, 133, 135), stop:0.4 rgb(31, 31, 33), stop:0.2 rgb(0, 0, 150,) );
+}
+
+QGraphicsView[name="PRLIView"] QScrollBar::sub-line:vertical, QGraphicsView[name="PRLIView"] QScrollBar::sub-line:horisontal, PanelScan[name="ScanDialogPanelScan"] QScrollBar::handle, PanelScan[name="PRLIPanelScan"] QScrollBar::handle{
+        background-color: green;
+        color: red;
+        margin: 10px;
+        padding 10px;
+}
+
+TableVRLI QHeaderView::section {
+	color: white; 
+	background-color: #111111; 
+	border: 1px solid white;
+}
+
+TableVRLI *{
+	color: white;
+        background-color: black; border: 1px solid white;
+	gridline-color:#ffffff;
+}
+
+TableVRLI QTableView:item:selected{
+	background-color: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0  rgb(255, 0, 50), stop:0.6 rgb(255, 0, 0),stop:1 rgb(255, 0, 50) );
+
+}
+
+TableVRLI QScrollBar:vertical{
+	border: 2px solid white;
+	background: #111111;
+	width: 15px;
+	margin: 22px 0 22px 0;
+}
+
+TableVRLI QScrollBar::handle:vertical {
+	background: #555555;
+	min-height: 20px;
+}
+
+TableVRLI QScrollBar::add-line:vertical{
+	border: 2px solid white;
+	background: #444444;
+	height: 20px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+
+TableVRLI QScrollBar::sub-line:vertical{
+	border: 2px solid white;
+	background: #444444;
+	height: 20px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+
+TableVRLI QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical{
+	border: 2px solid white;
+	width: 3px;
+	height: 3px;
+	background: white;
+}
+
+TableVRLI QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+	background: none;
+}
+PRLISceneRoundDialogBox, ScanSceneDialogBox{
+        background-color: #000000;
+}
+
+
+

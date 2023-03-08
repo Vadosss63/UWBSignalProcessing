@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/timer.png</file>
+        <file>StyleSheet/MainWindow.qss</file>
+        <file>images/format-indent-more.svg</file>
+        <file>images/media-playback-start.svg</file>
+        <file>images/media-playback-stop.svg</file>
+        <file>images/preferences-desktop.svg</file>
+        <file>images/window-new.svg</file>
+        <file>images/default.svg</file>
+        <file>images/zoom-original.svg</file>
+        <file>images/window-close.svg</file>
+        <file>images/document-new.svg</file>
+        <file>images/document-save.svg</file>
+        <file>images/document-save-as.svg</file>
+        <file>images/dialog-cancel.svg</file>
+        <file>images/dialog-ok.svg</file>
+        <file>images/document-open.svg</file>
+        <file>images/edit-copy.svg</file>
+        <file>images/edit-cut.svg</file>
+        <file>images/edit-delete.svg</file>
+        <file>images/edit-paste.svg</file>
+        <file>images/edit-redo.svg</file>
+        <file>images/edit-undo.svg</file>
+        <file>images/help-faq.svg</file>
+        <file>images/system-lock-screen.svg</file>
+        <file>images/view-fullscreen.svg</file>
+        <file>images/view-restore.svg</file>
+        <file>images/zoom-in.svg</file>
+        <file>images/zoom-out.svg</file>
+        <file>images/horizontal_alig.png</file>
+        <file>images/vertical_alig.png</file>
+    </qresource>
+</RCC>
