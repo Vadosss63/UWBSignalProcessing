@@ -1,6 +1,8 @@
 #ifndef ACCUMULATIONMODULE_H
 #define ACCUMULATIONMODULE_H
 
+#undef emit
+
 #include <algorithm>
 #include <numeric>
 

@@ -1,6 +1,8 @@
 #ifndef ACCUMULATIONDUALMODULE_H
 #define ACCUMULATIONDUALMODULE_H
 
+#undef emit
+
 #include <boost/circular_buffer.hpp>
 #include <tbb/concurrent_queue.h>
 #include "iomodule.h"

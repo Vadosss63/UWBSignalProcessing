@@ -1,6 +1,8 @@
 #ifndef PORTSCONNECT_H
 #define PORTSCONNECT_H
 
+#undef emit
+
 #include <tbb/concurrent_queue.h>
 #include "abstractmodule.h"
 #include "moduleconnectports.h"

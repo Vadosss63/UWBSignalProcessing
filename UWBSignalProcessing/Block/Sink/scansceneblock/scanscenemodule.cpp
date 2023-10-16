@@ -38,7 +38,7 @@ void ScanBufferSceneModule::UpdateScan(uint32_t azimuth)
         }
 
         m_currentFrame++;
-        emit ScanUpdated();
+        ScanUpdated();
         return;
 
     }
@@ -50,7 +50,7 @@ void ScanBufferSceneModule::UpdateScan(uint32_t azimuth)
     {
         if(m_isUpdateAll)
         {
-            emit ScanUpdated();
+            ScanUpdated();
             m_isUpdateAll = false;
         }
         else

@@ -13,7 +13,7 @@ ADCModule::ADCModule(): SourceModule(0),
 
 void ADCModule::StopEvent()
 {
-    emit StopADC();
+    StopADC();
     m_trendQ.resize(0);
     m_trendI.resize(0);
     SourceModule::StopEvent();
@@ -23,7 +23,7 @@ void ADCModule::StartEvent()
 {
     m_currentFrame = 0;
     m_nextIdPackage = 0;
-    emit StartADC();
+    StartADC();
 }
 
 void ADCModule::Operate()

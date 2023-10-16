@@ -37,6 +37,6 @@ void VRLIViewModule::PasingTarget()
             m_VRLIItem.push_back(item);
         }
 
-        emit ScanUpdated();
+        ScanUpdated();
     }
 }

@@ -24,7 +24,7 @@ void ScopeComplexModule::Operate()
         return;
 
     m_dataCsignal.push(std::move(buffer));
-    emit BufferUpdated();
+    BufferUpdated();
 }
 
 void ScopeComplexModule::StopEvent()

@@ -354,7 +354,7 @@ void ADCServerDialogBox::SetClockTune(uint32_t delay)
 void ADCServerDialogBox::CheckIPs()
 {
     ui->ipSelector->clear();
-    emit ResetIPNameList();
+    ResetIPNameList();
     m_switchADCOnOff = false;
     m_switchUFOSOnOff = false;
 
@@ -372,7 +372,7 @@ void ADCServerDialogBox::CheckIPs()
 
         ui->ipSelector->addItem(m_IpIndex);
         QHostAddress ip(m_IpIndex);
-        emit InitADCiP((ip.toIPv4Address() - 0xC0A80065));
+        InitADCiP((ip.toIPv4Address() - 0xC0A80065));
 
         m_IpIndex = ui->ipSelector->itemText(0);
         m_module->SetOutputPortsNumber(ui->ipSelector->count());
