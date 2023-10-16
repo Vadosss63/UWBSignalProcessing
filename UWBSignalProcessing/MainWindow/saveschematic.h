@@ -1,6 +1,8 @@
 #ifndef SAVESCHEMATIC_H
 #define SAVESCHEMATIC_H
 
+#define BOOST_BIND_GLOBAL_PLACEHOLDERS
+
 #include <QFile>
 #include <QString>
 #include <QList>
@@ -9,6 +11,8 @@
 #include <sstream>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
+#include <boost/bind/bind.hpp>
+
 #include "savestruct.h"
 
 

@@ -1,5 +1,6 @@
 #ifndef OPERATIONMANAGER_H
 #define OPERATIONMANAGER_H
+#undef emit
 
 #include <future>
 #include <thread>
