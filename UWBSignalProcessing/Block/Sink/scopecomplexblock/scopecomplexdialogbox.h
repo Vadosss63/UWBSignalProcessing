@@ -1,96 +1,95 @@
 #ifndef SCOPECOMPLEXDIALOGBOX_H
 #define SCOPECOMPLEXDIALOGBOX_H
 
-#include <QDialog>
-#include <QGridLayout>
-#include <QLabel>
-#include <QDial>
-#include <QLCDNumber>
-#include <QDialogButtonBox>
-#include <QComboBox>
-#include <QSpinBox>
-#include "dialogwindow.h"
 #include "changeevent.h"
+#include "dialogwindow.h"
 #include "plotter.h"
 #include "plotter_interface.h"
+#include <QComboBox>
+#include <QDial>
+#include <QDialog>
+#include <QDialogButtonBox>
+#include <QGridLayout>
+#include <QLCDNumber>
+#include <QLabel>
+#include <QSpinBox>
 
 class SettingScopeDialog;
 
-class ScopeComplexDialogBox: public QDialog, public DialogWindow
-{
-    Q_OBJECT
+class ScopeComplexDialogBox : public QDialog, public DialogWindow {
+  Q_OBJECT
 public:
-    ScopeComplexDialogBox(CSignalComplexPlotter* parent, QWidget *wparent = nullptr);
-    ~ScopeComplexDialogBox() override = default;
+  ScopeComplexDialogBox(CSignalComplexPlotter *parent,
+                        QWidget *wparent = nullptr);
+  ~ScopeComplexDialogBox() override = default;
 
-    QList<std::pair<QString, QVariant>> GetSetting() override;
-    bool SetSetting(QList<std::pair<QString, QVariant>> listSetting) override;
+  QList<std::pair<QString, QVariant>> GetSetting() override;
+  bool SetSetting(QList<std::pair<QString, QVariant>> listSetting) override;
 
-    void SendCommand() override;
-    void ShowDialog() override;
+  void SendCommand() override;
+  void ShowDialog() override;
 
-    int GetMagnitudeDimention() const;
-    void SetMagnitudeDimention(int magnitudeDimention);
+  int GetMagnitudeDimention() const;
+  void SetMagnitudeDimention(int magnitudeDimention);
 
-    int GetTimeDimention() const;
-    void SetTimeDimention(int timeDimention);
+  int GetTimeDimention() const;
+  void SetTimeDimention(int timeDimention);
 
-    TypeX GetTypeX() const;
-    void SetTypeX(TypeX typeX);
+  TypeX GetTypeX() const;
+  void SetTypeX(TypeX typeX);
 
-    int GetVal() const;
-    void SetVal(int val);
+  int GetVal() const;
+  void SetVal(int val);
 
-    QString GetValueName() const;
-    void SetValueName(const QString& valueName);
+  QString GetValueName() const;
+  void SetValueName(const QString &valueName);
 
-    void Attach(ChangeEvent* observer) override;
-    void Notification() override;
+  void Attach(ChangeEvent *observer) override;
+  void Notification() override;
 
 private slots:
-    void SetMagnitude(int Ymax);
-    void SetTime(int Xmax);
-    void ShowDialogSetting();
+  void SetMagnitude(int Ymax);
+  void SetTime(int Xmax);
+  void ShowDialogSetting();
 
 private:
-    void SetPliting();
+  void SetPliting();
 
-    PlotterComplex* m_memoryScope;
-    //    для слайдера
-    QDial* m_dialMagnitudeDimention;
-    //    для слайдера
-    QDial* m_dialTimeDimention;
-    QLCDNumber* m_LCDMagnitude;
-    QLCDNumber* m_LCDTime;
-    SettingScopeDialog* m_settingScopeDialog;
-    ChangeEvent* m_observer = nullptr;
+  PlotterComplex *m_memoryScope;
+  //    для слайдера
+  QDial *m_dialMagnitudeDimention;
+  //    для слайдера
+  QDial *m_dialTimeDimention;
+  QLCDNumber *m_LCDMagnitude;
+  QLCDNumber *m_LCDTime;
+  SettingScopeDialog *m_settingScopeDialog;
+  ChangeEvent *m_observer = nullptr;
 };
 
-class SettingScopeDialog: public QDialog
-{
-    Q_OBJECT
+class SettingScopeDialog : public QDialog {
+  Q_OBJECT
 public:
-    SettingScopeDialog(QWidget *parent = nullptr);
-    ~SettingScopeDialog() = default;
+  SettingScopeDialog(QWidget *parent = nullptr);
+  ~SettingScopeDialog() = default;
 
-    TypeX GetTypeX() const;
-    void SetTypeX(TypeX typeX);
+  TypeX GetTypeX() const;
+  void SetTypeX(TypeX typeX);
 
-    int GetVal() const;
-    void SetVal(int val);
+  int GetVal() const;
+  void SetVal(int val);
 
-    QString GetValueName() const;
-    void SetValueName(const QString& valueName);
+  QString GetValueName() const;
+  void SetValueName(const QString &valueName);
 
 public slots:
-    void ChangeType(int val);
+  void ChangeType(int val);
 
 private:
-    QDialogButtonBox* m_dialogButtonBox;
-    QComboBox* m_typeComboBox;
-    QSpinBox* m_valueSpinBox;
-    QComboBox* m_valueNameComboBox;
-    QLabel* valueLabel;
+  QDialogButtonBox *m_dialogButtonBox;
+  QComboBox *m_typeComboBox;
+  QSpinBox *m_valueSpinBox;
+  QComboBox *m_valueNameComboBox;
+  QLabel *valueLabel;
 };
 
 #endif // SCOPECOMPLEXDIALOGBOX_H

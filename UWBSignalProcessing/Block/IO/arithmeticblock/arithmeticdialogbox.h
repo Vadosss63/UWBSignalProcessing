@@ -7,25 +7,22 @@
 #include "abstractdialogcommand.h"
 #include "arithmeticstate.h"
 
-class ArithmeticDialogBox: public AbstractDialogCommand
-{
-    Q_OBJECT
+class ArithmeticDialogBox : public AbstractDialogCommand {
+  Q_OBJECT
 public:
+  ArithmeticDialogBox();
+  ~ArithmeticDialogBox() override = default;
 
-    ArithmeticDialogBox();
-    ~ArithmeticDialogBox() override = default;
+  QList<std::pair<QString, QVariant>> GetSetting() override;
+  bool SetSetting(QList<std::pair<QString, QVariant>> listSetting) override;
 
-    QList<std::pair<QString, QVariant> > GetSetting() override;
-    bool SetSetting(QList<std::pair<QString, QVariant> > listSetting) override;
-
-    std::string GetState() const;
-    QString GetTitleState() const;
+  std::string GetState() const;
+  QString GetTitleState() const;
 
 private:
+  void CreateWidget();
 
-    void CreateWidget();
-
-    QComboBox* m_arithmeticState = nullptr;
+  QComboBox *m_arithmeticState = nullptr;
 };
 
 #endif // ARITHMETICDIALOGBOX_H

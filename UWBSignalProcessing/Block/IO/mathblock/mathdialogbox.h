@@ -7,24 +7,22 @@
 #include "abstractdialogcommand.h"
 #include "mathstate.h"
 
-class MathDialogBox: public AbstractDialogCommand
-{
-    Q_OBJECT
+class MathDialogBox : public AbstractDialogCommand {
+  Q_OBJECT
 public:
+  MathDialogBox();
+  ~MathDialogBox() override = default;
 
-    MathDialogBox();
-    ~MathDialogBox() override = default;
+  QList<std::pair<QString, QVariant>> GetSetting() override;
+  bool SetSetting(QList<std::pair<QString, QVariant>> listSetting) override;
 
-    QList<std::pair<QString, QVariant> > GetSetting() override;
-    bool SetSetting(QList<std::pair<QString, QVariant> > listSetting) override;
-
-    std::string GetMathState() const;
-    QString GetTitleState() const;
+  std::string GetMathState() const;
+  QString GetTitleState() const;
 
 private:
-    void CreateWidget();
+  void CreateWidget();
 
-    QComboBox* m_mathState = nullptr;
+  QComboBox *m_mathState = nullptr;
 };
 
 #endif // UPSAMPLINGDIALOGBOX_H

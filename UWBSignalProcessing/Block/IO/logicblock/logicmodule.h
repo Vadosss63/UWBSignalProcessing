@@ -1,21 +1,19 @@
 #ifndef LOGICMODULE_H
 #define LOGICMODULE_H
 
-#include "iomodule.h"
 #include "csignal.h"
+#include "iomodule.h"
 
-class LogicModule : public IOModule< csignal<double>,  csignal<double>>
-{
+class LogicModule : public IOModule<csignal<double>, csignal<double>> {
 
 public:
+  LogicModule();
+  ~LogicModule() override = default;
 
-    LogicModule();
-    ~LogicModule() override = default;
-
-    void Operate() override;
+  void Operate() override;
 
 private:
-    volatile bool m_sendFirst = true;
+  volatile bool m_sendFirst = true;
 };
 
 #endif // LOGICMODULE_H

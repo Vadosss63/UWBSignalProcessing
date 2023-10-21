@@ -1,52 +1,48 @@
 #ifndef TWOGAINBLOCK_H
 #define TWOGAINBLOCK_H
 
-#include "twogainmodule.h"
+#include "bilderblocks.h"
 #include "ioblock.h"
 #include "twogaindialogbox.h"
-#include "bilderblocks.h"
+#include "twogainmodule.h"
 
-class PluginBlock: public QObject, public BilderBlocks
-{
-    Q_OBJECT
-    Q_INTERFACES(BilderBlocks)
-    Q_PLUGIN_METADATA(IID "Radar.UWBSignalProcessing.BilderBlocks" NAME_FILE)
+class PluginBlock : public QObject, public BilderBlocks {
+  Q_OBJECT
+  Q_INTERFACES(BilderBlocks)
+  Q_PLUGIN_METADATA(IID "Radar.UWBSignalProcessing.BilderBlocks" NAME_FILE)
 
 public:
-
-    PluginBlock(QObject *parent = nullptr);
-    AbstractBlock* LoudBlock() const override;
-
+  PluginBlock(QObject *parent = nullptr);
+  AbstractBlock *LoudBlock() const override;
 };
 
-class TwoGainBlock : public IOBlock
-{
+class TwoGainBlock : public IOBlock {
 public:
+  TwoGainBlock();
+  ~TwoGainBlock() override = default;
 
-    TwoGainBlock();
-    ~TwoGainBlock() override = default;
+  AbstractBlock *Clone() const override;
 
-    AbstractBlock* Clone() const override;
-
-    AbstractModule* GetModule() const override;
-    QString GetType() const override;
-    void Change() override;
-    void RegistrOperationManager(AbstractOperationManager* operationManager) override;
+  AbstractModule *GetModule() const override;
+  QString GetType() const override;
+  void Change() override;
+  void
+  RegistrOperationManager(AbstractOperationManager *operationManager) override;
 
 protected:
-    // событие отрисовки
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget*) override;
-    // Создание рисунка
-    void DrawImage(QPainter *painter) override;
+  // событие отрисовки
+  void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+             QWidget *) override;
+  // Создание рисунка
+  void DrawImage(QPainter *painter) override;
 
 private:
-    void InitBlock(QWidget *) override;
-    void CreateBlockPorts();
+  void InitBlock(QWidget *) override;
+  void CreateBlockPorts();
 
-    QVector<QLine> m_image;
-    std::unique_ptr<TwoGainModule> m_module = nullptr;
-    std::unique_ptr<TwoGainDialogBox> m_dialog = nullptr;
-
+  QVector<QLine> m_image;
+  std::unique_ptr<TwoGainModule> m_module = nullptr;
+  std::unique_ptr<TwoGainDialogBox> m_dialog = nullptr;
 };
 
 #endif // TWOGAINBLOCK_H

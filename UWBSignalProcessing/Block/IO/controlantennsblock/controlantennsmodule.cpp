@@ -1,15 +1,14 @@
 #include "controlantennsmodule.h"
 
-ControlAntennsModule::ControlAntennsModule(): IOModule(1, 2){}
+ControlAntennsModule::ControlAntennsModule() : IOModule(1, 2) {}
 
-void ControlAntennsModule::Operate()
-{
-    std::lock_guard<std::mutex> lock(operateLock);
+void ControlAntennsModule::Operate() {
+  std::lock_guard<std::mutex> lock(operateLock);
 
-    SigBuffer tempSig;
+  SigBuffer tempSig;
 
-    if (!PopFromInput(tempSig))
-        return;
+  if (!PopFromInput(tempSig))
+    return;
 
-    PushToOutput(tempSig, tempSig.first.frameNumber() % 2);
+  PushToOutput(tempSig, tempSig.first.frameNumber() % 2);
 }

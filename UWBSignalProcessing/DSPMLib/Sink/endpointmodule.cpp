@@ -1,13 +1,12 @@
 #include "endpointmodule.h"
 
-EndPointModule::EndPointModule(QObject* parent) :
-    SinkModule(static_cast<uint8_t>(1), parent){}
+EndPointModule::EndPointModule(QObject *parent)
+    : SinkModule(static_cast<uint8_t>(1), parent) {}
 
-EndPointModule::~EndPointModule(){}
+EndPointModule::~EndPointModule() {}
 
-void EndPointModule::Operate()
-{
-    csignal<double> temp;
-    PopFromInput(temp);
+void EndPointModule::Operate() {
+  csignal<double> temp;
+  PopFromInput(temp);
 }
 }

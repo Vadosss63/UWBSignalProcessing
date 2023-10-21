@@ -4,23 +4,21 @@
 #include "abstractdialogcommand.h"
 #include "customdialwidget.h"
 
-class PhaserDialogBox: public AbstractDialogCommand
-{
+class PhaserDialogBox : public AbstractDialogCommand {
 
 public:
+  PhaserDialogBox();
+  ~PhaserDialogBox() override = default;
 
-    PhaserDialogBox();
-    ~PhaserDialogBox() override = default;
+  QList<std::pair<QString, QVariant>> GetSetting() override;
+  bool SetSetting(QList<std::pair<QString, QVariant>> listSetting) override;
 
-    QList<std::pair<QString, QVariant> > GetSetting() override;
-    bool SetSetting(QList<std::pair<QString, QVariant> > listSetting) override;
-
-    int GetPhase();
+  int GetPhase();
 
 private:
-    //    создание сетки
-    QGridLayout* m_gridLayoout;
-    CustomDialWidget* m_widget;
+  //    создание сетки
+  QGridLayout *m_gridLayoout;
+  CustomDialWidget *m_widget;
 };
 
 #endif // PhaserDialodBox_H

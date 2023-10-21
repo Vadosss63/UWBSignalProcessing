@@ -1,250 +1,234 @@
 #ifndef DRAWCURVER_H
 #define DRAWCURVER_H
 
-#include <QVector>
+#include "abstractdialogcommand.h"
+#include "customdialwidget.h"
 #include <QComboBox>
 #include <QSpinBox>
-#include "customdialwidget.h"
-#include "abstractdialogcommand.h"
+#include <QVector>
 
 class FilterState;
 
-class FilterDialogBox: public AbstractDialogCommand
-{
-    Q_OBJECT
+class FilterDialogBox : public AbstractDialogCommand {
+  Q_OBJECT
 public:
+  FilterDialogBox();
+  ~FilterDialogBox() override;
 
-    FilterDialogBox();
-    ~FilterDialogBox() override;
-    
-    QList<std::pair<QString, QVariant> > GetSetting() override;
-    bool SetSetting(QList<std::pair<QString, QVariant> > listSetting) override;
-    
-    uint8_t GetInputPortsNumber();
-    uint8_t GetOutputPortsNumber();
-    bool GetPortState() const;
+  QList<std::pair<QString, QVariant>> GetSetting() override;
+  bool SetSetting(QList<std::pair<QString, QVariant>> listSetting) override;
 
-    double GetSampleFreq();
-    double GetCutFreq1();
-    double GetCutFreq2();
+  uint8_t GetInputPortsNumber();
+  uint8_t GetOutputPortsNumber();
+  bool GetPortState() const;
 
-    int GetOrder();
-    int GetFilterType();
+  double GetSampleFreq();
+  double GetCutFreq1();
+  double GetCutFreq2();
 
-    void AddState(FilterState* state);
-    
+  int GetOrder();
+  int GetFilterType();
+
+  void AddState(FilterState *state);
+
 private slots:
-    void SelectState(int index);
-    
+  void SelectState(int index);
+
 private:
-    friend class FilterState;
-    void ChangeState(FilterState* state);
-    FilterState* m_currentState = nullptr;
-    QVector<FilterState*> m_filterStates;
-    // выбор состояния генератора
-    QComboBox* m_selectState = nullptr;
-    QGridLayout* layout = nullptr;
+  friend class FilterState;
+  void ChangeState(FilterState *state);
+  FilterState *m_currentState = nullptr;
+  QVector<FilterState *> m_filterStates;
+  // выбор состояния генератора
+  QComboBox *m_selectState = nullptr;
+  QGridLayout *layout = nullptr;
 };
 
-class SettingSignal : public QWidget
-{
-    Q_OBJECT
-public:    
-    SettingSignal();
-    ~SettingSignal() = default;
+class SettingSignal : public QWidget {
+  Q_OBJECT
+public:
+  SettingSignal();
+  ~SettingSignal() = default;
 
-    int GetOrderFilter();
-    double GetSamp();
+  int GetOrderFilter();
+  double GetSamp();
 
-    uint8_t GetInputPortsNumber();
-    uint8_t GetOutputPortsNumber();
+  uint8_t GetInputPortsNumber();
+  uint8_t GetOutputPortsNumber();
 
-    bool GetPortState();
+  bool GetPortState();
 
-    QList<std::pair<QString, QVariant>> SaveSettings();
-    void SetParameter(const QList<std::pair<QString, QVariant> >& param);
+  QList<std::pair<QString, QVariant>> SaveSettings();
+  void SetParameter(const QList<std::pair<QString, QVariant>> &param);
 
 private:
+  void CreateOrderFilter();
+  void CreateSamp();
+  void CreateCountPorts();
+  void AddWidget(const QString &name, QWidget *widget);
+  void AddLayout(const QString &name, QLayout *layout);
 
-    void CreateOrderFilter();
-    void CreateSamp();
-    void CreateCountPorts();
-    void AddWidget(const QString& name, QWidget* widget);
-    void AddLayout(const QString& name, QLayout* layout);
+  QGridLayout *m_mainLayout;
 
-    QGridLayout* m_mainLayout;
+  QSpinBox *m_orderFilter; // Период фильтра
+  QSpinBox *m_countPorts;  // Количество портов
+  QComboBox *m_sampUnit;   // Частота дискретизации
 
-    QSpinBox* m_orderFilter; // Период фильтра
-    QSpinBox* m_countPorts; // Количество портов
-    QComboBox* m_sampUnit;  // Частота дискретизации
-
-    int m_currentCount = 1;
+  int m_currentCount = 1;
 };
 
 // отбражение выбранного окна
-class FilterState : public QWidget
-{
-    Q_OBJECT
+class FilterState : public QWidget {
+  Q_OBJECT
 public:
+  FilterState(QWidget *wparent = nullptr);
+  ~FilterState() override;
 
-    FilterState(QWidget *wparent = nullptr);
-    ~FilterState() override;
+  // получает параметры генератора
+  virtual QList<std::pair<QString, QVariant>> SaveSettings() const;
+  virtual void SetParameter(const QList<std::pair<QString, QVariant>> &);
+  // имя гениратора для отображения
+  virtual QString Name();
+  // Изменения состояния
+  void ChangeState(FilterDialogBox *dialog, FilterState *state);
+  SettingSignal *GetSettingSignal() const;
 
-    // получает параметры генератора
-    virtual QList<std::pair<QString, QVariant>> SaveSettings() const;
-    virtual void SetParameter(const QList<std::pair<QString, QVariant> >&);
-    // имя гениратора для отображения
-    virtual QString Name();
-    // Изменения состояния
-    void ChangeState(FilterDialogBox* dialog, FilterState* state);
-    SettingSignal* GetSettingSignal() const;
+  virtual double GetCutFreq1();
+  virtual double GetCutFreq2();
 
-    virtual double GetCutFreq1();
-    virtual double GetCutFreq2();
-
-    virtual int GetFilterType();
+  virtual int GetFilterType();
 
 public slots:
-    void ShowSettingFilter();
+  void ShowSettingFilter();
 
 protected:
-    QPushButton *buttonSettingSignal() const;
+  QPushButton *buttonSettingSignal() const;
 
 private:
-    SettingSignal* m_settingSignal;
-    QPushButton* m_buttonSettingSignal;
+  SettingSignal *m_settingSignal;
+  QPushButton *m_buttonSettingSignal;
 };
 
-class Lowpass: public FilterState
-{
-    Q_OBJECT
+class Lowpass : public FilterState {
+  Q_OBJECT
 public:
-    //    конструктор создает диологовое поле пользователя
-    Lowpass(QWidget *wparent = nullptr);
-    ~Lowpass() override = default;
-    Lowpass(const Lowpass& rhs) = delete;
-    Lowpass& operator=(const Lowpass& rhs) = delete;
-    
-    QList<std::pair<QString, QVariant>> SaveSettings()const override;
-    void SetParameter(const QList<std::pair<QString, QVariant>>& param) override;
-    QString Name() override;
+  //    конструктор создает диологовое поле пользователя
+  Lowpass(QWidget *wparent = nullptr);
+  ~Lowpass() override = default;
+  Lowpass(const Lowpass &rhs) = delete;
+  Lowpass &operator=(const Lowpass &rhs) = delete;
 
-    int GetFilterType() override;
-    double GetCutFreq1() override;
+  QList<std::pair<QString, QVariant>> SaveSettings() const override;
+  void SetParameter(const QList<std::pair<QString, QVariant>> &param) override;
+  QString Name() override;
+
+  int GetFilterType() override;
+  double GetCutFreq1() override;
 
 private:
+  void CreateWidget();
+  void CreateSettingWidget();
 
-    void CreateWidget();
-    void CreateSettingWidget();
-    
-    CustomDialWidget* m_freqCut = nullptr;
-    QGridLayout* m_gridLayoout = nullptr;
+  CustomDialWidget *m_freqCut = nullptr;
+  QGridLayout *m_gridLayoout = nullptr;
 };
 
-class Hightpass: public FilterState
-{
-    Q_OBJECT
+class Hightpass : public FilterState {
+  Q_OBJECT
 public:
-    Hightpass( QWidget *wparent = nullptr);
-    ~Hightpass() override = default;
-    Hightpass(const Hightpass& rhs) = delete;
-    Hightpass& operator=(const Hightpass& rhs) = delete;
+  Hightpass(QWidget *wparent = nullptr);
+  ~Hightpass() override = default;
+  Hightpass(const Hightpass &rhs) = delete;
+  Hightpass &operator=(const Hightpass &rhs) = delete;
 
-    QList<std::pair<QString, QVariant>> SaveSettings()const override;
-    void SetParameter(const QList<std::pair<QString, QVariant>>& param)  override;
+  QList<std::pair<QString, QVariant>> SaveSettings() const override;
+  void SetParameter(const QList<std::pair<QString, QVariant>> &param) override;
 
-    QString Name() override;
-    int GetFilterType() override;
-    double GetCutFreq1() override;
+  QString Name() override;
+  int GetFilterType() override;
+  double GetCutFreq1() override;
 
 private:
-
-    void CreateWidget();
-    void CreateSettingWidget();
-    CustomDialWidget* m_freqCut = nullptr;
-    QGridLayout* m_gridLayoout = nullptr;
+  void CreateWidget();
+  void CreateSettingWidget();
+  CustomDialWidget *m_freqCut = nullptr;
+  QGridLayout *m_gridLayoout = nullptr;
 };
 
-class Bandpass: public FilterState
-{
-    Q_OBJECT
+class Bandpass : public FilterState {
+  Q_OBJECT
 public:
-    Bandpass(QWidget *wparent = nullptr);
-    ~Bandpass() override = default;
-    Bandpass(const Bandpass& rhs) = delete;
-    Bandpass& operator=(const Bandpass& rhs) = delete;
-    QList<std::pair<QString, QVariant>> SaveSettings()const override;
-    void SetParameter(const QList<std::pair<QString, QVariant>>& param) override;
-    QString Name() override;
+  Bandpass(QWidget *wparent = nullptr);
+  ~Bandpass() override = default;
+  Bandpass(const Bandpass &rhs) = delete;
+  Bandpass &operator=(const Bandpass &rhs) = delete;
+  QList<std::pair<QString, QVariant>> SaveSettings() const override;
+  void SetParameter(const QList<std::pair<QString, QVariant>> &param) override;
+  QString Name() override;
 
-    double GetCutFreq1() override;
-    double GetCutFreq2() override;
+  double GetCutFreq1() override;
+  double GetCutFreq2() override;
 
-    int GetFilterType() override;
+  int GetFilterType() override;
 
 private:
+  void CreateWidget();
 
-    void CreateWidget();
+  void CreateSettingWidget();
 
-    void CreateSettingWidget();
-
-    CustomDialWidget * m_freqCutFirst = nullptr;
-    CustomDialWidget * m_freqCutSecond = nullptr;
-    QGridLayout * m_gridLayoout = nullptr;
+  CustomDialWidget *m_freqCutFirst = nullptr;
+  CustomDialWidget *m_freqCutSecond = nullptr;
+  QGridLayout *m_gridLayoout = nullptr;
 };
 
-class Bandstop: public FilterState
-{
-    Q_OBJECT
+class Bandstop : public FilterState {
+  Q_OBJECT
 public:
-    Bandstop(QWidget *wparent = nullptr);
-    ~Bandstop() override = default;
-    Bandstop(const Bandstop& rhs) = delete;
-    Bandstop& operator=(const Bandstop& rhs) = delete;
+  Bandstop(QWidget *wparent = nullptr);
+  ~Bandstop() override = default;
+  Bandstop(const Bandstop &rhs) = delete;
+  Bandstop &operator=(const Bandstop &rhs) = delete;
 
-    QList<std::pair<QString, QVariant>> SaveSettings()const override;
-    void SetParameter(const QList<std::pair<QString, QVariant>>& param) override;
-    QString Name() override;
+  QList<std::pair<QString, QVariant>> SaveSettings() const override;
+  void SetParameter(const QList<std::pair<QString, QVariant>> &param) override;
+  QString Name() override;
 
-    int GetFilterType() override;
+  int GetFilterType() override;
 
-    double GetCutFreq1() override;
-    double GetCutFreq2() override;
+  double GetCutFreq1() override;
+  double GetCutFreq2() override;
 
 private:
+  void CreateWidget();
+  void CreateSettingWidget();
 
-    void CreateWidget();
-    void CreateSettingWidget();
-
-    CustomDialWidget * m_freqCutFirst = nullptr;
-    CustomDialWidget * m_freqCutSecond = nullptr;
-    QGridLayout * m_gridLayoout = nullptr;
+  CustomDialWidget *m_freqCutFirst = nullptr;
+  CustomDialWidget *m_freqCutSecond = nullptr;
+  QGridLayout *m_gridLayoout = nullptr;
 };
 
-class Hlbrt: public FilterState
-{
-    Q_OBJECT
+class Hlbrt : public FilterState {
+  Q_OBJECT
 public:
-    Hlbrt( QWidget *wparent = nullptr);
-    ~Hlbrt() override = default;
-    Hlbrt(const Hlbrt& rhs) = delete;
-    Hlbrt& operator=(const Hlbrt& rhs) = delete;
+  Hlbrt(QWidget *wparent = nullptr);
+  ~Hlbrt() override = default;
+  Hlbrt(const Hlbrt &rhs) = delete;
+  Hlbrt &operator=(const Hlbrt &rhs) = delete;
 
-    QList<std::pair<QString, QVariant>> SaveSettings() const override;
-    void SetParameter(const QList<std::pair<QString, QVariant>>& param) override;
-    QString Name() override;
+  QList<std::pair<QString, QVariant>> SaveSettings() const override;
+  void SetParameter(const QList<std::pair<QString, QVariant>> &param) override;
+  QString Name() override;
 
-    int GetFilterType() override;
+  int GetFilterType() override;
 
 private:
+  void CreateWidget();
 
-    void CreateWidget();
+  void CreateSettingWidget();
 
-    void CreateSettingWidget();
-
-    CustomDialWidget * m_freqCutFirst = nullptr;
-    CustomDialWidget * m_freqCutSecond = nullptr;
-    QGridLayout * m_gridLayoout = nullptr;
+  CustomDialWidget *m_freqCutFirst = nullptr;
+  CustomDialWidget *m_freqCutSecond = nullptr;
+  QGridLayout *m_gridLayoout = nullptr;
 };
 
 #endif // DRAWCURVER_H

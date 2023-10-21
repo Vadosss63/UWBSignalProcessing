@@ -4,21 +4,19 @@
 #include <algorithm>
 #include <iostream>
 
-#include "iomodule.h"
 #include "csignal.h"
+#include "iomodule.h"
 
-class ControlFramesModule : public IOModule<csignal<double>, csignal<double>>
-{
+class ControlFramesModule : public IOModule<csignal<double>, csignal<double>> {
 
 public:
-    ControlFramesModule();
-    ~ControlFramesModule() override = default;
+  ControlFramesModule();
+  ~ControlFramesModule() override = default;
 
-    void Operate() override;
+  void Operate() override;
 
 private:
-
-    unsigned short m_frame;
+  unsigned short m_frame;
 };
 
 #endif // CONTROLFRAMES_H

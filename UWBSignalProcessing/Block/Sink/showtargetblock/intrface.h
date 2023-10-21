@@ -5,16 +5,15 @@
 
 class Target;
 
-class UpdateScane
-{
+class UpdateScane {
 
 public:
-    UpdateScane() = default;
+  UpdateScane() = default;
 
-    virtual ~UpdateScane() = default;
-    virtual void AddTarget(std::vector<Target>&& targets) = 0;
-    virtual void ResetTarget() = 0;
-    virtual void Update() = 0;
+  virtual ~UpdateScane() = default;
+  virtual void AddTarget(std::vector<Target> &&targets) = 0;
+  virtual void ResetTarget() = 0;
+  virtual void Update() = 0;
 };
 
 #endif // SHOWTARGETUPDATESCANE_H

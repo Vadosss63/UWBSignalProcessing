@@ -1,22 +1,22 @@
 #ifndef TIMEWORK_H
 #define TIMEWORK_H
 
-#include <iostream>
 #include <chrono>
+#include <iostream>
 
 namespace UtilityUWB {
 
-class TimeWork
-{
+class TimeWork {
 public:
-    TimeWork();
-    void Start();
-    void Stop();
+  TimeWork();
+  void Start();
+  void Stop();
+
 private:
-    std::chrono::steady_clock::time_point m_startTime;
-    std::chrono::steady_clock::time_point m_endTime;
-    bool m_isStart;
+  std::chrono::steady_clock::time_point m_startTime;
+  std::chrono::steady_clock::time_point m_endTime;
+  bool m_isStart;
 };
 
-} // UtilityUWB
+} // namespace UtilityUWB
 #endif // TIMEWORK_H

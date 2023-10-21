@@ -3,14 +3,13 @@
 
 #include <vector>
 
-class UpdateData
-{
+class UpdateData {
 
 public:
-    virtual ~UpdateData() = default;
-    virtual void AddData(std::vector<double>&& data, int indexZ) = 0;
-    virtual void ResetData() = 0;
-    virtual void Update() = 0;
+  virtual ~UpdateData() = default;
+  virtual void AddData(std::vector<double> &&data, int indexZ) = 0;
+  virtual void ResetData() = 0;
+  virtual void Update() = 0;
 };
 
 #endif // INTERFACE_H

@@ -1,36 +1,21 @@
 #include "interfaces.h"
 
-Command::~Command(){}
+Command::~Command() {}
 
-ControllerCommands::~ControllerCommands(){}
+ControllerCommands::~ControllerCommands() {}
 
-Command* ControllerCommands::ReadCommand()
-{
-    return nullptr;
-}
+Command *ControllerCommands::ReadCommand() { return nullptr; }
 
-void ControllerCommands::Start(){}
+void ControllerCommands::Start() {}
 
-void ControllerCommands::Stop(){}
+void ControllerCommands::Stop() {}
 
-HandlerDevice::~HandlerDevice(){}
+HandlerDevice::~HandlerDevice() {}
 
-bool HandlerDevice::ExicuteCommand(Command *)
-{
-    return false;
-}
+bool HandlerDevice::ExicuteCommand(Command *) { return false; }
 
-std::string HandlerDevice::GetError()
-{
-    return "No Open device";
-}
+std::string HandlerDevice::GetError() { return "No Open device"; }
 
-bool HandlerDevice::IsNoError()
-{
-    return false;
-}
+bool HandlerDevice::IsNoError() { return false; }
 
-bool HandlerDevice::Open(const std::string &)
-{
-    return false;
-}
+bool HandlerDevice::Open(const std::string &) { return false; }

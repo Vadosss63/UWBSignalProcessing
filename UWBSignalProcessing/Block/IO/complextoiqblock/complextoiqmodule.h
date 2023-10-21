@@ -1,20 +1,19 @@
 #ifndef COMPLEXTOIQMODULE_H
 #define COMPLEXTOIQMODULE_H
 
-#include "iomodule.h"
 #include "csignal.h"
+#include "iomodule.h"
 
-typedef  std::pair<csignal<double>, csignal<double>> InBuffer;
-typedef  csignal<double> OutBuffer;
+typedef std::pair<csignal<double>, csignal<double>> InBuffer;
+typedef csignal<double> OutBuffer;
 
-class ComplexToIQModule : public IOModule<InBuffer,  OutBuffer>
-{
+class ComplexToIQModule : public IOModule<InBuffer, OutBuffer> {
 
 public:
-    ComplexToIQModule();
-    ~ComplexToIQModule() override = default;
+  ComplexToIQModule();
+  ~ComplexToIQModule() override = default;
 
-    void Operate() override;
+  void Operate() override;
 };
 
 #endif // COMPLEXTOIQMODULE_H

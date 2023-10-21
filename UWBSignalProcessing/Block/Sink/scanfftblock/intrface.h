@@ -1,30 +1,27 @@
 #ifndef UPDATESCANE_H
 #define UPDATESCANE_H
 
-#include <vector>
-#include <QVector>
 #include <QPointF>
+#include <QVector>
+#include <vector>
 
 class SectorBaseItem;
 
-class UpdateScane
-{
+class UpdateScane {
 
 public:
+  UpdateScane() = default;
 
-    UpdateScane() = default;
+  virtual ~UpdateScane() = default;
+  virtual void Update() = 0;
+  virtual void CreateSector(int count) = 0;
 
-    virtual ~UpdateScane() = default;
-    virtual void Update() = 0;
-    virtual void CreateSector(int count) = 0;
+  virtual std::vector<SectorBaseItem *> &DataMatrix() = 0;
 
-    virtual std::vector<SectorBaseItem*>& DataMatrix() = 0;
+  virtual QVector<QPointF> &DataPloter() = 0;
+  virtual void UpdatePloter() = 0;
 
-    virtual QVector<QPointF>& DataPloter() = 0;
-    virtual void UpdatePloter() = 0;
-
-    virtual void ResizePloter(int size) = 0;
-
+  virtual void ResizePloter(int size) = 0;
 };
 
 #endif // INTRFACE_H

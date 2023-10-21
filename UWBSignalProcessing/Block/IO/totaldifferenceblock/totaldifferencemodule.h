@@ -1,27 +1,24 @@
 #ifndef TOTALDIFFERENCEMODULE_H
 #define TOTALDIFFERENCEMODULE_H
 
-#include "iomodule.h"
 #include "csignal.h"
+#include "iomodule.h"
 
-class TotalTifferenceModule : public IOModule< csignal<double>,  csignal<double>>
-{
+class TotalTifferenceModule
+    : public IOModule<csignal<double>, csignal<double>> {
 
 public:
+  TotalTifferenceModule();
+  ~TotalTifferenceModule() override = default;
 
-    TotalTifferenceModule();
-    ~TotalTifferenceModule() override = default;
-
-    void Operate() override;
-    void StartEvent() override;
+  void Operate() override;
+  void StartEvent() override;
 
 private:
-
-    csignal<double> m_signalFirst;
-    csignal<double> m_signalSecond;
-    // номер сигнала
-    uint32_t m_currentSignal = 0;
-
+  csignal<double> m_signalFirst;
+  csignal<double> m_signalSecond;
+  // номер сигнала
+  uint32_t m_currentSignal = 0;
 };
 
 #endif // TOTALDIFFERENCEMODULE_H

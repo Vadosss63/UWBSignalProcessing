@@ -1,27 +1,24 @@
 #ifndef SHOWTARGETMODULE_H
 #define SHOWTARGETMODULE_H
 
+#include "intrface.h"
+#include "sinkmodule.h"
+#include "target.h"
 #include <algorithm>
 #include <iostream>
-#include "sinkmodule.h"
-#include "intrface.h"
-#include "target.h"
 
-class ShowTargetModule: public SinkModule<std::vector<Target>>
-{
+class ShowTargetModule : public SinkModule<std::vector<Target>> {
 
 public:
+  ShowTargetModule();
+  ~ShowTargetModule() override = default;
 
-    ShowTargetModule();
-    ~ShowTargetModule() override = default;
-
-    // Установка интерфейса обновления класса
-    void SetUpdateScane(UpdateScane* updateScane);
-    void Operate() override;
+  // Установка интерфейса обновления класса
+  void SetUpdateScane(UpdateScane *updateScane);
+  void Operate() override;
 
 private:
-    UpdateScane* m_updateScane = nullptr;
-
+  UpdateScane *m_updateScane = nullptr;
 };
 
 #endif // SHOWTARGETMODULE_H

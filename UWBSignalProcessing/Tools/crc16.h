@@ -11,5 +11,4 @@ quint16 crc16(const QByteArray &ba);
 uint16_t crc16(const std::vector<uint8_t> &ba);
 quint16 crc16(quint16 crc, const char *buffer, int len);
 
-
 #endif // CRC16_H

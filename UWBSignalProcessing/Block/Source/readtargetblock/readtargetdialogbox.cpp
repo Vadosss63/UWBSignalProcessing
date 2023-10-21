@@ -1,61 +1,53 @@
 #include "readtargetdialogbox.h"
 
-ReadTargetDialogBox::ReadTargetDialogBox()
-{ 
-    CreateWidget();
+ReadTargetDialogBox::ReadTargetDialogBox() { CreateWidget(); }
+
+std::string ReadTargetDialogBox::GetPathFile() const {
+  return m_textPath->text().toStdString();
 }
 
-std::string ReadTargetDialogBox::GetPathFile() const
-{
-    return m_textPath->text().toStdString();
+QList<std::pair<QString, QVariant>> ReadTargetDialogBox::GetSetting() {
+  QList<std::pair<QString, QVariant>> listSetting;
+  listSetting.append(std::make_pair("m_textPath", m_textPath->text()));
+  return listSetting;
 }
 
-QList<std::pair<QString, QVariant>> ReadTargetDialogBox::GetSetting()
-{
-    QList<std::pair<QString, QVariant> > listSetting;
-    listSetting.append(std::make_pair("m_textPath", m_textPath->text()));
-    return listSetting;
+bool ReadTargetDialogBox::SetSetting(
+    QList<std::pair<QString, QVariant>> listSetting) {
+  if (listSetting.size() != 1)
+    return false;
+
+  foreach (auto parmSetting, listSetting) {
+    if (parmSetting.first == "m_textPath")
+      m_textPath->setText(parmSetting.second.toString());
+  }
+  return true;
 }
 
-bool ReadTargetDialogBox::SetSetting(QList<std::pair<QString, QVariant>> listSetting)
-{
-    if(listSetting.size() != 1)
-        return false;
+void ReadTargetDialogBox::OpenFile() {
+  QString path = QFileDialog::getOpenFileName(this, "Открытие файла", "",
+                                              "target(*.target)");
 
-    foreach (auto parmSetting, listSetting)
-    {
-        if(parmSetting.first == "m_textPath")
-            m_textPath->setText(parmSetting.second.toString());
-    }
-    return true;
+  if (path.isEmpty())
+    return;
+
+  m_textPath->setText(path);
 }
 
-void ReadTargetDialogBox::OpenFile()
-{    
-    QString path = QFileDialog::getOpenFileName(this, "Открытие файла","",
-                                                "target(*.target)");
+void ReadTargetDialogBox::CreateWidget() {
+  auto *layout = new QVBoxLayout;
+  m_textPath = new QLineEdit;
+  m_textPath->setFixedWidth(500);
 
-    if(path.isEmpty())
-        return;
+  auto *layoutSig = new QGridLayout;
+  m_openPath = new QPushButton("Обзор...");
+  layoutSig->addWidget(new QLabel("Путь к файлу:"), 0, 0, 1, 2);
+  layoutSig->addWidget(m_textPath, 1, 0);
+  layoutSig->addWidget(m_openPath, 1, 1);
 
-    m_textPath->setText(path);
-}
+  connect(m_openPath, SIGNAL(clicked()), this, SLOT(OpenFile()));
 
-void ReadTargetDialogBox::CreateWidget()
-{
-    auto* layout = new QVBoxLayout;
-    m_textPath = new QLineEdit;
-    m_textPath->setFixedWidth(500);
+  layout->addLayout(layoutSig);
 
-    auto* layoutSig = new QGridLayout;
-    m_openPath = new QPushButton("Обзор...");
-    layoutSig->addWidget(new QLabel("Путь к файлу:"), 0, 0, 1, 2);
-    layoutSig->addWidget(m_textPath, 1, 0);
-    layoutSig->addWidget(m_openPath, 1, 1);
-
-    connect(m_openPath, SIGNAL(clicked()), this, SLOT(OpenFile()));
-
-    layout->addLayout(layoutSig);
-
-    SetTopLayout(layout);
+  SetTopLayout(layout);
 }

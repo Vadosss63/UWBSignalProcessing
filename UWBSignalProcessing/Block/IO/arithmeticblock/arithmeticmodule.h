@@ -1,26 +1,24 @@
 #ifndef ARITHMETICMODULE_H
 #define ARITHMETICMODULE_H
 
-#include <map>
-#include "iomodule.h"
 #include "arithmeticstate.h"
+#include "iomodule.h"
+#include <map>
 
-class ArithmeticModule: public IOModule<csignal<double>, csignal<double>>
-{
+class ArithmeticModule : public IOModule<csignal<double>, csignal<double>> {
 
 public:
+  ArithmeticModule();
+  ~ArithmeticModule() override;
 
-    ArithmeticModule();
-    ~ArithmeticModule() override;
-
-    void SetMathValue(const std::string& math_value);
-    void Operate() override;
+  void SetMathValue(const std::string &math_value);
+  void Operate() override;
 
 private:
-    void Init();
+  void Init();
 
-    std::map<std::string, ArithmeticState* > m_mapState;
-    ArithmeticState* m_mathVal = nullptr;
+  std::map<std::string, ArithmeticState *> m_mapState;
+  ArithmeticState *m_mathVal = nullptr;
 };
 
 #endif // ARITHMETICMODULE_H

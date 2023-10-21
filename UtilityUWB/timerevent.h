@@ -1,47 +1,44 @@
 #ifndef TIMEREVENT_H
 #define TIMEREVENT_H
 
-#include <forward_list>
 #include <algorithm>
+#include <forward_list>
 #include <mutex>
 
 class TimerEvent;
 
-class TimerListEvents
-{
+class TimerListEvents {
 
 public:
-    TimerListEvents() = default;
-    ~TimerListEvents() = default;
+  TimerListEvents() = default;
+  ~TimerListEvents() = default;
 
-    // добавление слушателя событий
-    void AttachEvent(TimerEvent* event);
+  // добавление слушателя событий
+  void AttachEvent(TimerEvent *event);
 
-    // удаления слушателя событий
-    void DetachEvent(TimerEvent* event);
+  // удаления слушателя событий
+  void DetachEvent(TimerEvent *event);
 
 protected:
-
-    void Timout();
+  void Timout();
 
 private:
-    std::mutex m_mutex;
-    std::forward_list<TimerEvent*> m_listEvent;
+  std::mutex m_mutex;
+  std::forward_list<TimerEvent *> m_listEvent;
 };
 
-class TimerEvent
-{
-    friend TimerListEvents;
+class TimerEvent {
+  friend TimerListEvents;
 
 public:
-    virtual ~TimerEvent();
+  virtual ~TimerEvent();
 
-    virtual void TimerTimout();
+  virtual void TimerTimout();
 
 private:
-    void RegisterTimer(TimerListEvents* timer);
+  void RegisterTimer(TimerListEvents *timer);
 
-    TimerListEvents* m_timer = nullptr;
+  TimerListEvents *m_timer = nullptr;
 };
 
 #endif // TIMEREVENT_H

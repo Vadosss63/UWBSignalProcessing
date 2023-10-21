@@ -1,27 +1,23 @@
 #ifndef TWOGAINDIALODBOX_H
 #define TWOGAINDIALODBOX_H
 
+#include "abstractdialogcommand.h"
 #include <QCheckBox>
 #include <QSpinBox>
-#include "abstractdialogcommand.h"
 
-class TwoGainDialogBox: public AbstractDialogCommand
-{
+class TwoGainDialogBox : public AbstractDialogCommand {
 
 public:
+  TwoGainDialogBox();
+  ~TwoGainDialogBox() override = default;
 
-    TwoGainDialogBox();
-    ~TwoGainDialogBox() override = default;
-
-    QList<std::pair<QString, QVariant> > GetSetting() override;
-    bool SetSetting(QList<std::pair<QString, QVariant> > listSetting) override;
-    int GetIndexOtherGainSignal() const;
+  QList<std::pair<QString, QVariant>> GetSetting() override;
+  bool SetSetting(QList<std::pair<QString, QVariant>> listSetting) override;
+  int GetIndexOtherGainSignal() const;
 
 private:
-
-    void CreateWidget();
-    QSpinBox* m_indexOtherGain = nullptr;
-
+  void CreateWidget();
+  QSpinBox *m_indexOtherGain = nullptr;
 };
 
 #endif // TWOGAINDIALODBOX_H

@@ -5,11 +5,10 @@
 
 class AbstractBlock;
 
-class BilderBlocks
-{
+class BilderBlocks {
 public:
-    virtual ~BilderBlocks() = default;
-    virtual AbstractBlock* LoudBlock() const = 0;
+  virtual ~BilderBlocks() = default;
+  virtual AbstractBlock *LoudBlock() const = 0;
 };
 Q_DECLARE_INTERFACE(BilderBlocks, "Radar.UWBSignalProcessing.BilderBlocks")
 

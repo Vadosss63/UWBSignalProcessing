@@ -4,23 +4,21 @@
 #include "abstractdialogcommand.h"
 #include "customdialwidget.h"
 
-class DiffDialogBox: public AbstractDialogCommand
-{
-    Q_OBJECT
+class DiffDialogBox : public AbstractDialogCommand {
+  Q_OBJECT
 public:
+  DiffDialogBox();
+  ~DiffDialogBox() override = default;
 
-    DiffDialogBox();
-    ~DiffDialogBox() override = default;
+  QList<std::pair<QString, QVariant>> GetSetting() override;
+  bool SetSetting(QList<std::pair<QString, QVariant>> listSetting) override;
 
-    QList<std::pair<QString, QVariant> > GetSetting() override;
-    bool SetSetting(QList<std::pair<QString, QVariant> > listSetting) override;
-
-    int GetDeltaX();
+  int GetDeltaX();
 
 private:
-    CustomDialWidget* m_widget;
-    // создание сетки
-    QGridLayout* m_gridLayoout;
+  CustomDialWidget *m_widget;
+  // создание сетки
+  QGridLayout *m_gridLayoout;
 };
 
 #endif // DIFFDIALOGBOX_H

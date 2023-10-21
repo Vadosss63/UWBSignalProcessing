@@ -1,82 +1,63 @@
 #include "timedelayblock.h"
 
-TimeDelayBlock::TimeDelayBlock():
-    IOBlock("Delay")
-{
-    setToolTip("Выполняет запись сигнала\n в указанный файл");
+TimeDelayBlock::TimeDelayBlock() : IOBlock("Delay") {
+  setToolTip("Выполняет запись сигнала\n в указанный файл");
 }
 
-AbstractBlock* TimeDelayBlock::Clone() const
-{
-    return new TimeDelayBlock();
+AbstractBlock *TimeDelayBlock::Clone() const { return new TimeDelayBlock(); }
+
+AbstractModule *TimeDelayBlock::GetModule() const { return m_module.get(); }
+
+QString TimeDelayBlock::GetType() const { return "TimeDelayBlock"; }
+
+void TimeDelayBlock::Change() {
+  if (m_module && m_dialog) {
+    m_module->SetNumberOfZeros(m_dialog->GetNumberOfZeros());
+  }
 }
 
-AbstractModule* TimeDelayBlock::GetModule() const
-{
-    return m_module.get();
+void TimeDelayBlock::paint(QPainter *painter,
+                           const QStyleOptionGraphicsItem *option, QWidget *) {
+  DrawRect(painter, option);
+  DrawImage(painter);
 }
 
-QString TimeDelayBlock::GetType() const
-{
-    return "TimeDelayBlock";
+void TimeDelayBlock::DrawImage(QPainter *painter) {
+  const QRectF &rect = GetborderRect();
+  QFont f("Times", 18);
+  painter->setFont(f);
+  painter->drawText(rect, Qt::AlignCenter, "/--/");
+  painter->setFont(QFont());
 }
 
-void TimeDelayBlock::Change()
-{
-    if (m_module && m_dialog) {
-        m_module->SetNumberOfZeros(m_dialog->GetNumberOfZeros());
-    }
+void TimeDelayBlock::InitBlock(QWidget *) {
+  m_module = std::make_unique<TimeDelayModule>();
+  m_dialog = std::make_unique<TimeDelayDialogBox>();
+  // класс для отрисовки поля параметров
+  CreateBlockPorts();
+  SetAbstractDialogCommand(m_dialog.get());
 }
 
-void TimeDelayBlock::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget*)
-{
-    DrawRect(painter, option);
-    DrawImage(painter);
+void TimeDelayBlock::CreateBlockPorts() {
+  uint8_t sizeIn = m_module->CountInputPort();
+  QVector<IPort *> inPorts;
+  for (uint8_t i = 0; i < sizeIn; ++i)
+    inPorts.push_back(m_module->GetInput(i));
+
+  uint8_t sizeOut = m_module->CountOutputPort();
+  QVector<OPort *> outPorts;
+  for (uint8_t i = 0; i < sizeOut; ++i)
+    outPorts.push_back(m_module->GetOutput(i));
+
+  CreatePorts(inPorts, outPorts);
 }
 
-void TimeDelayBlock::DrawImage(QPainter *painter)
-{
-    const QRectF& rect = GetborderRect();
-    QFont f("Times", 18);
-    painter->setFont(f);
-    painter->drawText(rect, Qt::AlignCenter, "/--/");
-    painter->setFont(QFont());
-}
+PluginBlock::PluginBlock(QObject *parent) : QObject(parent) {}
 
-void TimeDelayBlock::InitBlock(QWidget*)
-{
-    m_module = std::make_unique<TimeDelayModule>();
-    m_dialog = std::make_unique<TimeDelayDialogBox>();
-    // класс для отрисовки поля параметров
-    CreateBlockPorts();
-    SetAbstractDialogCommand(m_dialog.get());
-}
+AbstractBlock *PluginBlock::LoudBlock() const { return new TimeDelayBlock; }
 
-void TimeDelayBlock::CreateBlockPorts()
-{
-    uint8_t sizeIn = m_module->CountInputPort();
-    QVector<IPort*> inPorts;
-    for (uint8_t i = 0; i < sizeIn; ++i)
-        inPorts.push_back(m_module->GetInput(i));
-
-    uint8_t sizeOut = m_module->CountOutputPort();
-    QVector<OPort*> outPorts;
-    for (uint8_t i = 0; i < sizeOut; ++i)
-        outPorts.push_back(m_module->GetOutput(i));
-
-    CreatePorts(inPorts, outPorts);
-}
-
-
-PluginBlock::PluginBlock(QObject* parent): QObject(parent){}
-
-AbstractBlock* PluginBlock::LoudBlock() const
-{
-    return new TimeDelayBlock;
-}
-
-void TimeDelayBlock::RegistrOperationManager(AbstractOperationManager* operationManager)
-{
-    if(m_module)
-        m_module->RegistrOperationManager(operationManager);
+void TimeDelayBlock::RegistrOperationManager(
+    AbstractOperationManager *operationManager) {
+  if (m_module)
+    m_module->RegistrOperationManager(operationManager);
 }
