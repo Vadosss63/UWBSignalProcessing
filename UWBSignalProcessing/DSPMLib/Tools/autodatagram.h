@@ -2,6 +2,7 @@
 #define AUTODATAGRAM_H
 
 #include <functional>
+#include <cstdint>
 
 namespace AutoDatagram {
 

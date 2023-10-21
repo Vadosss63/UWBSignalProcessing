@@ -20,7 +20,7 @@ void ScopeBufferModule::Operate() {
     return;
 
   m_dataCsignal.push(std::move(buffer));
-  emit BufferUpdated();
+  BufferUpdated();
 }
 
 void ScopeBufferModule::StopEvent() {

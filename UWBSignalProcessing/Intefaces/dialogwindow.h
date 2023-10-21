@@ -5,6 +5,7 @@
 #include <QString>
 
 class ChangeEvent;
+class QVariant;
 
 class DialogWindow {
 public:
