@@ -15,7 +15,7 @@ void ScanfftModule::Transform(std::vector<std::valarray<double> >& newSignal)
             {
                 double val = newSignal[i][j];
                 SetValColor(static_cast<int>(j), val);
-                if(m_ploterLine == j)
+                if(m_ploterLine == static_cast<int>(j))
                 {
                     if(m_isLog)
                     {
@@ -37,7 +37,7 @@ void ScanfftModule::Transform(std::vector<std::valarray<double> >& newSignal)
             {
                 double val = newSignal[i][j];
                 SetValColor(static_cast<int>(j), val);
-                if(m_ploterLine == (newSignal.size() - 1) - i)
+                if(static_cast<size_t>(m_ploterLine) == (newSignal.size() - 1) - i)
                 {
                     if(m_isLog)
                     {

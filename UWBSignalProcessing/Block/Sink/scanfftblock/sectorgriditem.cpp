@@ -137,7 +137,7 @@ void SectorGrid::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     CreateAxisX(painter, path);
     CreateAxisY(painter, path);
 
-    painter->setRenderHint(QPainter::HighQualityAntialiasing);
+    painter->setRenderHint(QPainter::Antialiasing);
     painter->drawPath(path);
     painter->restore();
 }

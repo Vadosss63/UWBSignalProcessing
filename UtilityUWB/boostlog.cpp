@@ -13,12 +13,12 @@ BoostLog* BoostLog::Instance()
 
 BoostLog::~BoostLog() noexcept {}
 
-void BoostLog::WriteInfoLog(const std::string& message)
+void BoostLog::WriteInfoLog(const std::string&)
 {
 //    LOG_INFO << message;
 }
 
-void BoostLog::WriteErrorLog(const std::string& message)
+void BoostLog::WriteErrorLog(const std::string&)
 {
 //    LOG_ERROR << message;
 }

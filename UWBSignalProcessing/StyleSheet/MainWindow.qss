@@ -1,116 +1,234 @@
-*{color: #cc3237;font:  12pt \"Century Schoolbook L\";}
-QMainWindow{background: rgb(255, 230, 180);}
-QToolBar{spacing: 8px; border-radius: 3px; border-right-color: rgb(0, 0, 0);}
-QToolBar:vertical{background: qlineargradient(x1:1, y1:0, x2:0, y2:0,
-stop:0.85 rgb(255, 230, 180) stop:0.5 rgb(255, 183, 0), stop:0.15 rgb(255, 230, 180));}
-QToolBar:horizontal, QStatusBar, QMenuBar, QMenuBar::item {background: qlineargradient(x1:0, y1:1, x2:0, y2:0,
-stop:0.85 rgb(255, 230, 180) stop:0.5 rgb(255, 183, 30), stop:0.15 rgb(255, 230, 180));}
-QStatusBar::item{border: none;}
-
-QListView{
-        border-radius: 20px;
-}
-QGraphicsView{
-        border-radius: 4px;
+* {
+    color: #321D40;
+    font-size: 12pt;
+    font-family: "Century Schoolbook L";
 }
 
-QGraphicsView, QListView{
-	background: rgb(255, 230, 180);
- 	border: 3px solid rgb(255, 183, 15);
- 	
-}
-QMenu {background: rgb(255, 235, 190);}
-QPushButton[name="statusWorkShema"], QPushButton:hover[name="statusWorkShema"],QPushButton:pressed[name="statusWorkShema"],
-QPushButton:selected[name="statusWorkShema"]
-{width: 30px; height: 30px; border-radius: 15px; padding: 3px;background: qlineargradient(x1:1, y1:1, x2:0, y2:0,
-stop:1 rgb(255, 255, 255), stop:0.6 rgb(255, 31, 33), stop:0 rgb(255, 255, 255));}
-QPushButton:disabled[name="statusWorkShema"]
-{background: qlineargradient(x1:1, y1:1, x2:0, y2:0, stop:1 rgb(255, 255, 135), stop:0.6 rgb(31, 255, 33), stop:1 rgb(255, 255, 135));}
-
-QGraphicsTextItem{
-    color: #cc3237;
+/* Background for the central widget */
+QWidget#centralWidget {
+    background: rgb(181, 165, 212);
 }
 
-QTabBar::tab{
-        margin: 4 ;
-        padding: 10px;
-        background: rgb(255, 220, 180);
-        border-radius: 3px;
-        border: 1px solid rgb(255, 165, 79);
-}
-QTabBar::tab:Selected{
-        background: rgb(255, 183, 0);
+/* Text color for QGraphicsTextItem */
+QGraphicsTextItem {
+    color: #321D40;
 }
 
-QWidget[name="widgetPlusScheme"]{
-	background: rgb(255, 230, 180);
+/* Styling for QMainWindow */
+QMainWindow {
+    background: rgb(181, 165, 212);
 }
 
-QTextEdit{
-	background-color: #ffffe0;
-	padding: 10px;
+/* Styling for QToolBar */
+QToolBar {
+    spacing: 8px;
+    border-radius: 3px;
+    border: 1px solid rgb(0, 0, 0);
+    background: qlineargradient(x1:1, y1:0, x2:0, y2:0, stop:0.85 rgb(181, 165, 212), stop:0.5 rgb(134, 101, 178), stop:0.15 rgb(181, 165, 212));
 }
 
- QSpinBox::up-button{
-	border: 2px solid  rgb(255, 130, 30);
-	/*selection-background-color: red;*/ 
-	border-top-right-radius: 10px;
-	border-top-left-radius: 3px;
-	subcontrol-position: top right;
-	subcontrol-origin: padding;
-	background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0.00 rgb(255, 45, 13), stop:0.5 rgb(255, 150, 13),    stop:0.85 rgb(255, 255, 255));
-	}
- QSpinBox::down-button{
-	border: 2px solid  rgb(255, 130, 30);
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 3px;
-	subcontrol-position: bottom right;
-	subcontrol-origin: padding;
-	background: qlineargradient(x1:1, y1:0, x2:1, y2:1, stop:0.00 rgb(255, 45, 13), stop:0.5 rgb(255, 150, 13),    stop:0.85 rgb(255, 255, 255));
-	}
+/* Styling for QTabWidget */
+QTabWidget {
+    color: rgb(0, 0, 0);
+}
 
-QSpinBox::down-button:pressed{
-	background-color: rgb(255, 183, 15);
+/* Styling for QWidget with name "widgetPlusScheme" */
+QWidget[name="widgetPlusScheme"] {
+    background: rgb(181, 165, 212);
 }
-QSpinBox::up-button:pressed{
-	background-color: rgb(255, 183, 15);
+
+/* Styling for QTabBar::tab */
+QTabBar::tab {
+    margin: 4;
+    padding: 10px;
+    background: rgb(160, 130, 190);
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(134, 101, 178);
 }
- QSpinBox {
-	background-color: #ffffe9;  
-	border-style: outset;
-	border-width: 0px;
-	selection-background-color: rgb(255, 183, 15); 
-	border: 2px solid rgb(255, 183, 15); 
-	border-radius: 11px; 
-	}
+
+/* Styling for selected QTabBar::tab */
+QTabBar::tab:selected {
+    background: rgb(134, 101, 178);
+}
+
+/* Styling for QToolBar:vertical */
+QToolBar:vertical {
+    background: qlineargradient(x1:1, y1:0, x2:0, y2:0, stop:0.85 rgb(181, 165, 212), stop:0.5 rgb(134, 101, 178), stop:0.15 rgb(181, 165, 212));
+}
+
+/* Styling for QToolBar:horizontal, QStatusBar, QMenuBar, QMenuBar::item, QSpinBox::up-button, QSpinBox::down-button */
+QToolBar:horizontal, QStatusBar, QMenuBar, QMenuBar::item, QSpinBox::up-button, QSpinBox::down-button {
+    background: qlineargradient(x1:0, y1:1, x2:0, y2:0, stop:0.85 rgb(181, 165, 212), stop:0.5 rgb(134, 101, 178), stop:0.15 rgb(181, 165, 212));
+}
+
+/* Styling for QStatusBar::item */
+QStatusBar::item {
+    border: none;
+}
+
+/* Styling for QGraphicsView and QListView */
+QGraphicsView, QListView {
+    background: #FAFAFA;
+    border: 3px solid rgb(134, 101, 178);
+}
+
+/* Styling for QListView with rounded corners */
+QListView {
+    border-radius: 20px;
+}
+
+/* Styling for QGraphicsView with rounded corners */
+QGraphicsView {
+    border-radius: 3px;
+}
+
+/* Styling for QMenu */
+QMenu {
+    background: rgb(134, 101, 178);
+}
+
+/* Styling for QPushButton with name "statusWorkShema" and its states */
+QPushButton[name="statusWorkShema"],
+QPushButton:hover[name="statusWorkShema"],
+QPushButton:pressed[name="statusWorkShema"],
+QPushButton:selected[name="statusWorkShema"] {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 3px;
+    background: qlineargradient(x1:1, y1:1, x2:0, y2:0, stop:1 rgb(255, 255, 255), stop:0.6 rgb(255, 31, 33), stop:0 rgb(255, 255, 255));
+}
+
+/* Styling for disabled QPushButton with name "statusWorkShema" */
+QPushButton:disabled[name="statusWorkShema"] {
+    background: qlineargradient(x1:1, y1:1, x2:0, y2:0, stop:1 rgb(255, 255, 135), stop:0.6 rgb(31, 255, 33), stop:1 rgb(255, 255, 135));
+}
+
+/* Styling for QTextEdit */
+QTextEdit {
+    padding: 10px;
+    border: none;
+}
+
+/* Styling for QSpinBox::down-button and QSpinBox::up-button when pressed */
+QSpinBox::down-button:pressed,
+QSpinBox::up-button:pressed {
+    background-color: rgb(100, 0, 105);
+}
+
+/* Styling for QSpinBox */
+QSpinBox {
+    background-color: #ffffe9;
+    border-style: outset;
+    border-width: 0px;
+    selection-background-color: #321D40;
+    border: 2px solid #321D40;
+    border-radius: 11px;
+}
+
+/* Styling for QSpinBox::up-button */
+QSpinBox::up-button {
+    border: 2px solid rgb(68, 0, 105);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 3px;
+    subcontrol-position: top right;
+    subcontrol-origin: padding;
+}
+
+/* Styling for QSpinBox::down-button */
+QSpinBox::down-button {
+    border: 2px solid rgb(68, 0, 105);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 3px;
+    subcontrol-position: bottom right;
+    subcontrol-origin: padding;
+}
+
+/* Styling for QPushButton */
 QPushButton {
-	border-radius: 10px; 
-	padding: 4px; 
+    border-radius: 10px;
+    padding: 4px;
 }
 
-QComboBox{
-	background-color: rgb(255, 183, 15);
-	border: none; 
-	border-top-left-radius: 10px; 
-	border-bottom-left-radius: 10px; 
+/* Styling for QComboBox */
+QComboBox {
+    background-color: rgb(181, 165, 212);
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    min-width: 130px;
+    min-height: 18px;
 }
 
-QAbstractItemView{ 
-	border-radius: 0px;
+/* Styling for QDial */
+QPushButton, QDial {
+    background-color: rgb(181, 165, 212);
 }
 
-
-QScrollBar, QPushButton, QDial {
-	background-color: rgb(255, 165, 79); 
+/* Styling for QScrollBar::handle:vertical and QScrollBar::handle:horizontal */
+QScrollBar::handle:vertical,
+QScrollBar::handle:horizontal {
+    background-color: rgb(130, 90, 178);
+    margin: 10px;
+    padding: 10px;
 }
 
-QScrollBar::handle:vertical, QScrollBar::handle:horisontal{
-	background-color: rgb(255, 107, 29); 
-	margin: 10px;
-	padding 10px;
+/* Styling for QPushButton when focused */
+QPushButton:focus {
+    background-color: rgb(130, 90, 178);
+    border-image: none;
 }
 
+/* Styling for QAction */
+QAction {
+    background-color: rgb(181, 165, 212);
+    color: white;
+}
 
-AbstractDialog{
-	background-color: #ffffd0;
+/* Styling for QGroupBox */
+QGroupBox {
+    margin: 5;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px 4px 4px 0px;
+}
+
+/* Styling for QGroupBox title */
+QGroupBox::title {
+    margin: 0;
+    subcontrol-position: center top;
+}
+
+/* Styling for QPushButton when pressed */
+QPushButton:pressed {
+    background-color: green;
+    border: none;
+}
+
+/* Styling for QAbstractItemView */
+QAbstractItemView {
+    border-radius: 0px;
+}
+
+/* Styling for QAbstractButton in hover state */
+QAbstractButton:hover {
+    background-color: rgb(130, 90, 178);
+    border: none;
+}
+
+/* Styling for QPalette::ToolTipBase and QPalette::Highlight */
+QPalette::ToolTipBase {
+    background-color: green;
+    border: none;
+}
+
+QPalette::Highlight {
+    background-color: green;
+    border: none;
+}
+
+/* Styling for QGraphicsView (side menu for blocks) and QGraphicsTextItem (labels: sources, modules...) */
+#QGraphicsView, #QGraphicsTextItem {
+    /* Add your specific styles here */
 }

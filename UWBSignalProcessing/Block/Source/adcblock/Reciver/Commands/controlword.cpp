@@ -54,7 +54,7 @@ void ControlWord::AddData(uint8_t byte1, uint8_t byte2, uint8_t byte3, uint8_t b
 
 uint8_t ControlWord::GetData(int index) const
 {
-    if(index < SizeData())
+    if(static_cast<size_t>(index) < SizeData())
         return m_word[NUMBER_BYTE::DATA + index];
     return 0xFF;
 }

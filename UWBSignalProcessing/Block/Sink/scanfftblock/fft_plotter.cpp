@@ -114,7 +114,7 @@ void DrawCurver::paintEvent(QPaintEvent * /*event*/)
     painter.drawPixmap(0, 0, m_pixmap);
     if(m_rubberBandIsShown)
     {
-        painter.setPen(m_colorGrid.light());
+        painter.setPen(m_colorGrid.lighter());
         painter.drawRect(m_rubberBandRect.normalized().adjusted(0, 0, -1, -1));
     }
 
@@ -122,7 +122,7 @@ void DrawCurver::paintEvent(QPaintEvent * /*event*/)
     {
         QStyleOptionFocusRect option;
         option.initFrom(this);
-        option.backgroundColor = m_colorGrid.dark();
+        option.backgroundColor = m_colorGrid.darker();
         painter.drawPrimitive(QStyle::PE_FrameFocusRect, option);
     }
 }
@@ -219,9 +219,9 @@ void DrawCurver::keyPressEvent(QKeyEvent *event)
 
 void DrawCurver::wheelEvent(QWheelEvent *event)
 {
-    int numDegrees = event->delta() / 8;
+    int numDegrees = event->angleDelta().y() / 8;
     int numTicks = numDegrees / 15;
-    if(event->orientation() == Qt::Horizontal)
+    if (event->angleDelta().x() != 0)
     {
         m_zoomStack[m_curZoom].Scroll(numTicks, 0);
     } else {
@@ -244,7 +244,7 @@ void DrawCurver::RefreshPixmap()
     m_pixmap = QPixmap(size());
     m_pixmap.fill(m_colorBackground);
     QPainter painter(&m_pixmap);
-    painter.initFrom(this);
+    painter.begin(this);
     DrawGrig(&painter);
     DrawCurves(&painter);
     update();
@@ -260,7 +260,7 @@ void DrawCurver::DrawGrig(QPainter *painter)
     QPen quiteDark = m_colorGrid;
     quiteDark.setStyle(Qt::DashLine);
     quiteDark.setWidthF(0.5);
-    QPen light = m_colorGrid.light();
+    QPen light = m_colorGrid.lighter();
     QString lableXText("Отсчеты");
 
     for (int i = 0; i < settings.numXTicks + 1; ++i) {
@@ -338,7 +338,7 @@ void DrawCurver::DrawCurves(QPainter *painter)
 
 void DrawCurver::ChangeSizeData(size_t newSize)
 {
-    if(m_curve.size() != newSize)
+    if(static_cast<size_t>(m_curve.size()) != newSize)
     {
         m_curve.resize(newSize);
         int x = 0;

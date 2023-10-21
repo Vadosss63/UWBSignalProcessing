@@ -44,7 +44,7 @@ void D3DialogBox::SendCommandAbstractModule()
     Notification();
 }
 
-void D3DialogBox::Attach(ChangeEvent* observer){}
+void D3DialogBox::Attach(ChangeEvent*){}
 
 void D3DialogBox::Notification(){}
 
@@ -62,9 +62,9 @@ void D3DialogBox::initializeGL()
 void D3DialogBox::wheelEvent(QWheelEvent *event)
 {
     GLfloat shift = m_zShift;
-    int numDegrees = event->delta() / 8;
+    int numDegrees = event->angleDelta().y() / 8;
     float numTicks = static_cast<float>((numDegrees / 15))/2;
-    if(event->orientation() == Qt::Vertical)
+    if (event->angleDelta().x() == 0)
     {
         shift += numTicks;
         if(shift > -8.5f && shift < -1.0f)

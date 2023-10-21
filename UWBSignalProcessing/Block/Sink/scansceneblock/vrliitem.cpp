@@ -22,7 +22,7 @@ void VRLIItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
     // painter->drawText(m_boundingRect, Qt::AlignCenter, QString::number(m_amplitude));
     painter->setFont(QFont());
     painter->setPen(QPen(GetColorItem(), 2));
-    painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform|QPainter::NonCosmeticDefaultPen);
+    painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     painter->drawPath(m_pathItem);
 }
 

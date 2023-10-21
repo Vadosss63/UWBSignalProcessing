@@ -119,6 +119,7 @@ std::pair<uint8_t*, size_t> SenderUDP::GetData_uint8() const
 
 bool SenderUDP::Bind(uint16_t port) noexcept
 {
+    using namespace boost::placeholders;
     EndPoint ep(Udp::v4(), port);
     ClearErrors();
     m_sock.bind(ep, GetErrors());
@@ -178,6 +179,7 @@ bool ReciverUDP::OpenSocket() noexcept
 
 bool ReciverUDP::Bind() noexcept
 {
+    using namespace boost::placeholders;
     ClearErrors();
     m_socket->bind(m_epReciver, GetErrors());
     return IsNoError();

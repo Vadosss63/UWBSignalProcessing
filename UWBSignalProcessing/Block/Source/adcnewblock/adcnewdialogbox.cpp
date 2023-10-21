@@ -135,7 +135,7 @@ void ADCNewDialogBox::imitationMode(bool enable)
 
 bool ADCNewDialogBox::isOneRun() const
 {
-    m_imitatorWidget->isOneRun();
+    return m_imitatorWidget->isOneRun();
 }
 
 int ADCNewDialogBox::GetFormatAngel()  const

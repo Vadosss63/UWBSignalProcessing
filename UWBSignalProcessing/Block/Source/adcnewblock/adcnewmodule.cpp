@@ -103,18 +103,18 @@ void ADCNewModule::ProcessDataStrobe()
     csignal<double> outQ(m_sizeData);
 
     if(m_shiftQ >= 0){
-        for(size_t i = 0; i < 512; i++)
+        for(int i = 0; i < 512; i++)
             outI[i] = m_receivedPacketsBuffer[0].data[i] + m_shiftLevelI;
 
-        for(size_t i = 0; i < 512 - m_shiftQ; i++)
+        for(int i = 0; i < 512 - m_shiftQ; i++)
             outQ[i] = m_receivedPacketsBuffer[1].data[i + m_shiftQ] + m_shiftLevelQ;
 
     }else{
 
-        for(size_t i = 0; i < 512 + m_shiftQ; i++)
+        for(int i = 0; i < 512 + m_shiftQ; i++)
             outI[i] = m_receivedPacketsBuffer[0].data[i - m_shiftQ] + m_shiftLevelI;
 
-        for(size_t i = 0; i < 512; i++)
+        for(int i = 0; i < 512; i++)
             outQ[i] = m_receivedPacketsBuffer[1].data[i] + m_shiftLevelQ;
     }
 

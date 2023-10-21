@@ -29,7 +29,7 @@ QRectF AbstractBlock::boundingRect() const
 QPainterPath AbstractBlock::shape() const
 {
     QPainterPath path;
-    path.addRoundRect(m_borderRect, Roundness(m_borderRect.width()), Roundness(m_borderRect.height()));
+    path.addRoundedRect(m_borderRect, Roundness(m_borderRect.width()), Roundness(m_borderRect.height()), Qt::RelativeSize);
     return path;
 }
 
@@ -196,7 +196,7 @@ void AbstractBlock::DrawRect(QPainter* painter, const QStyleOptionGraphicsItem* 
     }
     painter->setPen(pen);
     //    painter->setBrush(m_backgroundColor);
-    painter->drawRoundRect(m_borderRect, Roundness(m_borderRect.width()), Roundness(m_borderRect.height()));
+    painter->drawRoundedRect(m_borderRect, Roundness(m_borderRect.width()), Roundness(m_borderRect.height()),Qt::RelativeSize);
 
     painter->setPen(m_textColor);
     QRectF rectLable(OutlineRect().left(), m_borderRect.bottom(),

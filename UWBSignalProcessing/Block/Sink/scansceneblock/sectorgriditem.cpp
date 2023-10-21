@@ -194,7 +194,7 @@ void SectorRectGridItem::paint(QPainter *painter, const QStyleOptionGraphicsItem
 
     painter->restore();
     painter->setPen(QPen(Qt::green, 1));
-    painter->setRenderHint(QPainter::HighQualityAntialiasing);
+    painter->setRenderHint(QPainter::Antialiasing);
     painter->drawPath(path);
     DrawPathMousePressEvent(painter);
 }

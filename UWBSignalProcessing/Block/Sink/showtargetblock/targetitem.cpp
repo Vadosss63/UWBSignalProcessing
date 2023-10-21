@@ -56,7 +56,7 @@ void TargetItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWid
     painter->setFont(QFont());
     painter->setPen(QPen(GetColorItem(), 3));
     painter->setBrush(QBrush(GetColorItem()));
-    painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform|QPainter::NonCosmeticDefaultPen);
+    painter->setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
     painter->drawPath(m_pathItem);
 //    painter->drawRect(m_boundingRect);
     painter->restore();
