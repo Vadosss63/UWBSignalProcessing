@@ -4,6 +4,8 @@ include(../../include.pri)
 
 DESTDIR = $$IO_PATH
 
+unix:LIBS += -lfftw3
+
 SOURCES += \
     magnitudetoiqblock.cpp \
     magnitudetoiqmodule.cpp

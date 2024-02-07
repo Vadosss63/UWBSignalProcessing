@@ -4,6 +4,8 @@ include(../../include.pri)
 
 DESTDIR = $$IO_PATH
 
+unix:LIBS += -lfftw3
+
 SOURCES += \
     iqtomagnitudeblock.cpp \
     iqtomagnitudemodule.cpp \
@@ -11,7 +13,5 @@ SOURCES += \
 HEADERS += \
     iqtomagnitudeblock.h \
     iqtomagnitudemodule.h
-
-
 
 DISTFILES += iqtomagnitudeblock.json
