@@ -1,0 +1,81 @@
+{
+    "Block": {
+        "4": {
+            "ID": "4",
+            "Type": "IQToComplexBlock",
+            "coordX": "713",
+            "coordY": "601"
+        },
+        "2": {
+            "ID": "2",
+            "Type": "GaussianNoiseSourceBlock",
+            "coordX": "579",
+            "coordY": "554",
+            "Parametres": {
+                "m_comboBoxTS": "0",
+                "m_customDialWidget": "10"
+            }
+        },
+        "1": {
+            "ID": "1",
+            "Type": "TransmitterUDPBlock",
+            "coordX": "876",
+            "coordY": "612"
+        },
+        "0": {
+            "ID": "0",
+            "Type": "ReceiverUDPBlock",
+            "coordX": "1142",
+            "coordY": "616"
+        },
+        "3": {
+            "ID": "3",
+            "Type": "GaussianNoiseSourceBlock",
+            "coordX": "579",
+            "coordY": "667",
+            "Parametres": {
+                "m_comboBoxTS": "0",
+                "m_customDialWidget": "19"
+            }
+        },
+        "5": {
+            "ID": "5",
+            "Type": "ScopeComplexBlock",
+            "coordX": "1330",
+            "coordY": "552",
+            "Parametres": {
+                "MagnitudeDimention": "13",
+                "TimeDimention": "11",
+                "TypeX": "0",
+                "Val": "0",
+                "ValueName": ""
+            }
+        }
+    },
+    "Link": [
+        {
+            "BlockIn": "1",
+            "NumberPortIn": "1",
+            "BlockOut": "4",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "4",
+            "NumberPortIn": "1",
+            "BlockOut": "2",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "5",
+            "NumberPortIn": "1",
+            "BlockOut": "0",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "4",
+            "NumberPortIn": "2",
+            "BlockOut": "3",
+            "NumberPortOut": "1"
+        }
+    ]
+}
