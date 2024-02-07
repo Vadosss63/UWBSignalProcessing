@@ -2,8 +2,7 @@
 #include <cstdio>
 
 ReceiverUDPModule::ReceiverUDPModule()
-    : SourceModule<OutBuffer>(1),
-      m_client("192.168.0.10", 12244) /*m_client("127.0.0.1", 12244)*/
+    : SourceModule<OutBuffer>(1), m_client(m_ipAddress, m_port)
 {
   m_client.AddCallback([&]() { Operate(); });
 

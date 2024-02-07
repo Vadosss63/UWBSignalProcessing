@@ -28,10 +28,8 @@ public:
   RegistrOperationManager(AbstractOperationManager *operationManager) override;
 
 protected:
-  // событие отрисовки
   void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
              QWidget *) override;
-  // Создание рисунка
   void DrawImage(QPainter *painter) override;
 
 private:

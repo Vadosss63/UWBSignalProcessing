@@ -20,14 +20,15 @@ public:
   void StopEvent() override;
 
 private:
-  // слот запуска сервера
   void StartServer();
   void StopServer();
-  // создание протокола передачи данных
+
   void CreateProtocol(InBuffer &data);
   NetworkUWB::SenderUDP *m_server = nullptr;
-  // std::string m_ip = "192.168.0.10";
-  std::string m_ip = "127.0.0.1";
+
+  ///TODO: add dialogWindow to change parameters
+  static constexpr const char* m_ipAddress = "127.0.0.1";
+  static constexpr uint16_t m_port = 12244;
 };
 
 #endif // TRANSMITTERUDPMODULE_H

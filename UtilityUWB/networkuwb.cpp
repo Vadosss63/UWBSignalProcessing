@@ -9,9 +9,9 @@ SenderUDP::SenderUDP(uint16_t port) : m_sock(m_service) {
   Open();
 }
 
-SenderUDP::SenderUDP(const std::string &adress, uint16_t port)
+SenderUDP::SenderUDP(const std::string &address, uint16_t port)
     : m_sock(m_service) {
-  SetEndPoint(adress, port);
+  SetEndPoint(address, port);
   Open();
 }
 
@@ -118,17 +118,17 @@ ReciverUDP::ReciverUDP(uint16_t port)
   SetEndPoint("127.0.0.1", port);
 }
 
-ReciverUDP::ReciverUDP(const std::string &adress, uint16_t port)
+ReciverUDP::ReciverUDP(const std::string &address, uint16_t port)
     : m_service(new IOservice), m_socket(new Socket(*m_service)),
       m_isStart(false) {
-  SetEndPoint(adress, port);
+  SetEndPoint(address, port);
 }
 
-ReciverUDP::ReciverUDP(const std::string &adress, uint16_t port,
+ReciverUDP::ReciverUDP(const std::string &address, uint16_t port,
                        uint16_t sizeBuf)
     : m_service(new IOservice), m_socket(new Socket(*m_service)),
       m_isStart(false), m_bufferReciveData(sizeBuf) {
-  SetEndPoint(adress, port);
+  SetEndPoint(address, port);
 }
 
 ReciverUDP::~ReciverUDP() {
@@ -137,9 +137,9 @@ ReciverUDP::~ReciverUDP() {
   delete m_service;
 }
 
-void ReciverUDP::SetEndPoint(const std::string &adress,
+void ReciverUDP::SetEndPoint(const std::string &address,
                              uint16_t port) noexcept {
-  m_epReciver = EndPoint(Address_v4::from_string(adress), port);
+  m_epReciver = EndPoint(Address_v4::from_string(address), port);
 }
 
 bool ReciverUDP::IsStart() noexcept { return m_isStart.load(); }

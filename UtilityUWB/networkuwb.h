@@ -69,7 +69,7 @@ class SenderUDP : public ErrorCodeBoost {
 public:
   SenderUDP();
   SenderUDP(uint16_t port); // отправляет на localhost
-  SenderUDP(const std::string &adress, uint16_t port);
+  SenderUDP(const std::string &address, uint16_t port);
   ~SenderUDP();
 
   // Открывает сокет
@@ -128,13 +128,13 @@ public:
   ReciverUDP();
   ReciverUDP(uint16_t port);
   // иницилизация сокета для прослушки UDP
-  ReciverUDP(const std::string &adress, uint16_t port);
-  ReciverUDP(const std::string &adress, uint16_t port, uint16_t sizeBuf);
+  ReciverUDP(const std::string &address, uint16_t port);
+  ReciverUDP(const std::string &address, uint16_t port, uint16_t sizeBuf);
   // Закрытие сокета и завершение работы потока
   ~ReciverUDP();
 
   // Устанновливает
-  void SetEndPoint(const std::string &adress, uint16_t port) noexcept;
+  void SetEndPoint(const std::string &address, uint16_t port) noexcept;
   void CreateBuffer(uint16_t size);
 
   bool OpenSocket() noexcept;

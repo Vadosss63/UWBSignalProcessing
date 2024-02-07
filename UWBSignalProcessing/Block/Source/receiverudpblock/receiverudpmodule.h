@@ -19,13 +19,15 @@ public:
   void StopEvent() override;
   void StartEvent() override;
 
-  // создание потока и запуск прослушки порта
   void StartThread();
-  // остановка потока
   void StopThread();
 
 private:
   NetworkUWB::ReciverUDP m_client;
+
+  static constexpr const char* m_ipAddress = "127.0.0.1";
+  ///TODO: add dialogWindow to change parameters
+  static constexpr uint16_t m_port = 12244;
 };
 
 #endif // RECEIVERUDPMODULE_H

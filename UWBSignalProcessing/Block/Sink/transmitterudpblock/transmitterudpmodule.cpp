@@ -10,7 +10,7 @@ void TransmitterUDPModule::StopServer() {
 
 void TransmitterUDPModule::StartServer() {
   StopServer();
-  m_server = new NetworkUWB::SenderUDP(m_ip, 12244);
+  m_server = new NetworkUWB::SenderUDP(m_ipAddress, m_port);
 }
 
 void TransmitterUDPModule::CreateProtocol(InBuffer &data) {
