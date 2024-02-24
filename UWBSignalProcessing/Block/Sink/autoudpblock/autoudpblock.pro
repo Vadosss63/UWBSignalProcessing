@@ -4,24 +4,26 @@ include(../../include.pri)
 
 DESTDIR = $$SINK_PATH
 
-INCLUDEPATH += $$PWD/../../../DSPMLib/Sink
-DEPENDPATH += $$PWD/../../../DSPMLib/Sink
-INCLUDEPATH += $$PWD/../../../../UtilityUWB
-DEPENDPATH += $$PWD/../../../../UtilityUWB
+INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Sink
+DEPENDPATH += $${PATH_TO_API}/DSPMLib/Sink
+INCLUDEPATH += $${PATH_TO_API}/../UtilityUWB
+DEPENDPATH += $${PATH_TO_API}/../UtilityUWB
+INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Tools
+DEPENDPATH += $${PATH_TO_API}/DSPMLib/Tools
 
 SOURCES += \
     autoudpblock.cpp \
     autoudpmodule.cpp \
-    ../../../../UtilityUWB/errorcodeboost.cpp \
-    ../../../../UtilityUWB/networkuwb.cpp \
-    ../../../DSPMLib/Tools/target.cpp
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.cpp \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.cpp \
+    $${PATH_TO_API}/DSPMLib/Tools/target.cpp
 
 HEADERS += \
     autoudpblock.h \
     autoudpmodule.h \
-    ../../../../UtilityUWB/errorcodeboost.h \
-    ../../../../UtilityUWB/networkuwb.h \
-    ../../../DSPMLib/Tools/target.h \
-    ../../../DSPMLib/Tools/autodatagram.h
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.h \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.h \
+    $${PATH_TO_API}/DSPMLib/Tools/target.h \
+    $${PATH_TO_API}/DSPMLib/Tools/autodatagram.h
 
 DISTFILES += autoudpblock.json

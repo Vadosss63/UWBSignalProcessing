@@ -7,15 +7,17 @@ include(../../include.pri)
 
 DESTDIR = $$SINK_PATH
 
-INCLUDEPATH += $$PWD/../../../DSPMLib/Sink
-DEPENDPATH += $$PWD/../../../DSPMLib/Sink
+INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Sink
+DEPENDPATH += $${PATH_TO_API}/DSPMLib/Sink
+INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Tools
+DEPENDPATH += $${PATH_TO_API}/DSPMLib/Tools
 
 SOURCES += \
     arrayvertex.cpp \
     3dtargetblock.cpp \
     3dtargetdialogbox.cpp \
     3dtargetmodule.cpp\
-    ../../../DSPMLib/Tools/target.cpp
+    $${PATH_TO_API}/DSPMLib/Tools/target.cpp
 
 
 HEADERS += \
@@ -24,7 +26,7 @@ HEADERS += \
     3dtargetblock.h \
     3dtargetdialogbox.h \
     3dtargetmodule.h\
-    ../../../DSPMLib/Tools/target.h
+    $${PATH_TO_API}/DSPMLib/Tools/target.h
 
 DISTFILES += \
     3dtargetblock.json

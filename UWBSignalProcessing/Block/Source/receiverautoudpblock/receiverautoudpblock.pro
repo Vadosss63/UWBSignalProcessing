@@ -4,26 +4,27 @@ include(../../include.pri)
 
 DESTDIR = $$SOURCE_PATH
 
-INCLUDEPATH += $$PWD/../../../../UtilityUWB
-DEPENDPATH += $$PWD/../../../../UtilityUWB
+INCLUDEPATH += $${PATH_TO_API}/../UtilityUWB
+DEPENDPATH += $${PATH_TO_API}/../UtilityUWB
+
+INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Tools
+DEPENDPATH += $${PATH_TO_API}/DSPMLib/Tools
 
 SOURCES += \
-    ../../../../UtilityUWB/networkuwb.cpp \
-    ../../../../UtilityUWB/errorcodeboost.cpp \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.cpp \
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.cpp \
     receiverautoudpblock.cpp \
     receiverautoudpmodule.cpp \
     ../../../DSPMLib/Tools/target.cpp
 
 
 HEADERS += \
-    ../../../../UtilityUWB/networkuwb.h \
-    ../../../../UtilityUWB/errorcodeboost.h \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.h \
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.h \
     receiverautoudpblock.h \
     receiverautoudpmodule.h \
-    ../../../DSPMLib/Tools/target.h\
-    ../../../DSPMLib/Tools/autodatagram.h
-
-
+    $${PATH_TO_API}/DSPMLib/Tools/target.h\
+    $${PATH_TO_API}/DSPMLib/Tools/autodatagram.h
 
 DISTFILES += \
     receiverautoudpblock.json
