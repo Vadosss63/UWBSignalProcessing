@@ -1,0 +1,34 @@
+{
+    "Block": {
+        "4": {
+            "ID": "4",
+            "Type": "ScopeBufferBlock",
+            "coordX": "387",
+            "coordY": "465",
+            "Parametres": {
+                "MagnitudeDimention": "6",
+                "TimeDimention": "11",
+                "TypeX": "0",
+                "Val": "0",
+                "ValueName": ""
+            }
+        },
+        "3": {
+            "ID": "3",
+            "Type": "ReadBlock",
+            "coordX": "123",
+            "coordY": "510",
+            "Parametres": {
+                "m_textPath": "\/home\/vadosss63\/UWB\/test\/test1.bin"
+            }
+        }
+    },
+    "Link": [
+        {
+            "BlockIn": "4",
+            "NumberPortIn": "1",
+            "BlockOut": "3",
+            "NumberPortOut": "1"
+        }
+    ]
+}

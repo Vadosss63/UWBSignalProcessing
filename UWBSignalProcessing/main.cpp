@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
   paths.append("platforms");
   QCoreApplication::setLibraryPaths(paths);
 
-  QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8")); //изменения
+  QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
   QApplication app(argc, argv);
   // QApplication::setQuitOnLastWindowClosed(false);
 

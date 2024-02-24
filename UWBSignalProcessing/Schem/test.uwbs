@@ -1,72 +1,54 @@
 {
     "Block": {
-        "8": {
-            "ID": "8",
+        "6": {
+            "ID": "6",
             "Type": "ScopeBufferBlock",
-            "coordX": "1203",
-            "coordY": "466",
+            "coordX": "907",
+            "coordY": "250",
             "Parametres": {
-                "MagnitudeDimention": "13",
+                "MagnitudeDimention": "10",
                 "TimeDimention": "11",
-                "TypeX": "0",
-                "Val": "0",
-                "ValueName": ""
+                "TypeX": "2",
+                "Val": "500",
+                "ValueName": "МГц"
             }
         },
-        "3": {
-            "ID": "3",
+        "2": {
+            "ID": "2",
             "Type": "GaussianNoiseSourceBlock",
-            "coordX": "344",
-            "coordY": "712",
+            "coordX": "346",
+            "coordY": "364",
             "Parametres": {
                 "m_comboBoxTS": "0",
                 "m_customDialWidget": "1"
             }
         },
-        "13": {
-            "ID": "13",
-            "Type": "ScopeBufferBlock",
-            "coordX": "1205",
-            "coordY": "335",
+        "0": {
+            "ID": "0",
+            "Type": "SinGeneratorBlock",
+            "coordX": "344",
+            "coordY": "479",
             "Parametres": {
-                "MagnitudeDimention": "13",
-                "TimeDimention": "11",
-                "TypeX": "0",
-                "Val": "0",
-                "ValueName": ""
+                "m_comboBoxTS": "0",
+                "m_frequency": "69",
+                "m_amplitude": "1",
+                "m_phase": "0"
             }
         },
-        "7": {
-            "ID": "7",
-            "Type": "ScopeBufferBlock",
-            "coordX": "911",
-            "coordY": "137",
-            "Parametres": {
-                "MagnitudeDimention": "13",
-                "TimeDimention": "11",
-                "TypeX": "0",
-                "Val": "0",
-                "ValueName": ""
-            }
-        },
-        "14": {
-            "ID": "14",
-            "Type": "ScopeBufferBlock",
-            "coordX": "1208",
-            "coordY": "585",
-            "Parametres": {
-                "MagnitudeDimention": "13",
-                "TimeDimention": "11",
-                "TypeX": "0",
-                "Val": "0",
-                "ValueName": ""
-            }
-        },
-        "16": {
-            "ID": "16",
+        "9": {
+            "ID": "9",
             "Type": "SplitterBlock",
-            "coordX": "909",
-            "coordY": "659",
+            "coordX": "631",
+            "coordY": "493",
+            "Parametres": {
+                "m_spinBox": "2"
+            }
+        },
+        "15": {
+            "ID": "15",
+            "Type": "SplitterBlock",
+            "coordX": "904",
+            "coordY": "492",
             "Parametres": {
                 "m_spinBox": "2"
             }
@@ -80,13 +62,14 @@
                 "arithmeticState": "0"
             }
         },
-        "15": {
-            "ID": "15",
-            "Type": "SplitterBlock",
-            "coordX": "904",
-            "coordY": "492",
+        "3": {
+            "ID": "3",
+            "Type": "GaussianNoiseSourceBlock",
+            "coordX": "344",
+            "coordY": "712",
             "Parametres": {
-                "m_spinBox": "2"
+                "m_comboBoxTS": "0",
+                "m_customDialWidget": "1"
             }
         },
         "12": {
@@ -97,77 +80,9 @@
             "Parametres": {
                 "MagnitudeDimention": "13",
                 "TimeDimention": "11",
-                "TypeX": "0",
-                "Val": "0",
-                "ValueName": ""
-            }
-        },
-        "1": {
-            "ID": "1",
-            "Type": "SinGeneratorBlock",
-            "coordX": "347",
-            "coordY": "591",
-            "Parametres": {
-                "m_comboBoxTS": "0",
-                "m_frequency": "70",
-                "m_amplitude": "1",
-                "m_phase": "90"
-            }
-        },
-        "2": {
-            "ID": "2",
-            "Type": "GaussianNoiseSourceBlock",
-            "coordX": "346",
-            "coordY": "364",
-            "Parametres": {
-                "m_comboBoxTS": "0",
-                "m_customDialWidget": "1"
-            }
-        },
-        "17": {
-            "ID": "17",
-            "Type": "MagnitudetoIQBlock",
-            "coordX": "1018",
-            "coordY": "574"
-        },
-        "6": {
-            "ID": "6",
-            "Type": "ScopeBufferBlock",
-            "coordX": "907",
-            "coordY": "250",
-            "Parametres": {
-                "MagnitudeDimention": "9",
-                "TimeDimention": "11",
-                "TypeX": "0",
-                "Val": "0",
-                "ValueName": ""
-            }
-        },
-        "11": {
-            "ID": "11",
-            "Type": "IQtoMagnitudeBlock",
-            "coordX": "798",
-            "coordY": "575"
-        },
-        "0": {
-            "ID": "0",
-            "Type": "SinGeneratorBlock",
-            "coordX": "344",
-            "coordY": "479",
-            "Parametres": {
-                "m_comboBoxTS": "0",
-                "m_frequency": "70",
-                "m_amplitude": "1",
-                "m_phase": "0"
-            }
-        },
-        "9": {
-            "ID": "9",
-            "Type": "SplitterBlock",
-            "coordX": "631",
-            "coordY": "493",
-            "Parametres": {
-                "m_spinBox": "2"
+                "TypeX": "2",
+                "Val": "500",
+                "ValueName": "МГц"
             }
         },
         "10": {
@@ -184,80 +99,99 @@
             "Parametres": {
                 "arithmeticState": "0"
             }
+        },
+        "14": {
+            "ID": "14",
+            "Type": "ScopeBufferBlock",
+            "coordX": "1208",
+            "coordY": "585",
+            "Parametres": {
+                "MagnitudeDimention": "13",
+                "TimeDimention": "11",
+                "TypeX": "0",
+                "Val": "0",
+                "ValueName": ""
+            }
+        },
+        "8": {
+            "ID": "8",
+            "Type": "ScopeBufferBlock",
+            "coordX": "1203",
+            "coordY": "466",
+            "Parametres": {
+                "MagnitudeDimention": "13",
+                "TimeDimention": "11",
+                "TypeX": "0",
+                "Val": "0",
+                "ValueName": ""
+            }
+        },
+        "7": {
+            "ID": "7",
+            "Type": "ScopeBufferBlock",
+            "coordX": "911",
+            "coordY": "137",
+            "Parametres": {
+                "MagnitudeDimention": "6",
+                "TimeDimention": "11",
+                "TypeX": "0",
+                "Val": "0",
+                "ValueName": ""
+            }
+        },
+        "17": {
+            "ID": "17",
+            "Type": "MagnitudetoIQBlock",
+            "coordX": "1018",
+            "coordY": "574"
+        },
+        "1": {
+            "ID": "1",
+            "Type": "SinGeneratorBlock",
+            "coordX": "347",
+            "coordY": "591",
+            "Parametres": {
+                "m_comboBoxTS": "0",
+                "m_frequency": "70",
+                "m_amplitude": "1",
+                "m_phase": "90"
+            }
+        },
+        "16": {
+            "ID": "16",
+            "Type": "SplitterBlock",
+            "coordX": "909",
+            "coordY": "659",
+            "Parametres": {
+                "m_spinBox": "2"
+            }
+        },
+        "13": {
+            "ID": "13",
+            "Type": "ScopeBufferBlock",
+            "coordX": "1205",
+            "coordY": "335",
+            "Parametres": {
+                "MagnitudeDimention": "13",
+                "TimeDimention": "11",
+                "TypeX": "0",
+                "Val": "0",
+                "ValueName": ""
+            }
+        },
+        "11": {
+            "ID": "11",
+            "Type": "IQtoMagnitudeBlock",
+            "coordX": "798",
+            "coordY": "575"
         }
     },
     "Link": [
-        {
-            "BlockIn": "5",
-            "NumberPortIn": "2",
-            "BlockOut": "3",
-            "NumberPortOut": "1"
-        },
-        {
-            "BlockIn": "17",
-            "NumberPortIn": "2",
-            "BlockOut": "16",
-            "NumberPortOut": "1"
-        },
-        {
-            "BlockIn": "12",
-            "NumberPortIn": "1",
-            "BlockOut": "16",
-            "NumberPortOut": "2"
-        },
-        {
-            "BlockIn": "11",
-            "NumberPortIn": "2",
-            "BlockOut": "5",
-            "NumberPortOut": "1"
-        },
-        {
-            "BlockIn": "13",
-            "NumberPortIn": "1",
-            "BlockOut": "15",
-            "NumberPortOut": "1"
-        },
-        {
-            "BlockIn": "17",
-            "NumberPortIn": "1",
-            "BlockOut": "15",
-            "NumberPortOut": "2"
-        },
-        {
-            "BlockIn": "5",
-            "NumberPortIn": "1",
-            "BlockOut": "1",
-            "NumberPortOut": "1"
-        },
         {
             "BlockIn": "4",
             "NumberPortIn": "1",
             "BlockOut": "2",
             "NumberPortOut": "1"
-        },
-        {
-            "BlockIn": "8",
-            "NumberPortIn": "1",
-            "BlockOut": "17",
-            "NumberPortOut": "1"
-        },
-        {
-            "BlockIn": "14",
-            "NumberPortIn": "1",
-            "BlockOut": "17",
-            "NumberPortOut": "2"
-        },
-        {
-            "BlockIn": "15",
-            "NumberPortIn": "1",
-            "BlockOut": "11",
-            "NumberPortOut": "1"
-        },
-        {
-            "BlockIn": "16",
-            "NumberPortIn": "1",
-            "BlockOut": "11",
-            "NumberPortOut": "2"
         },
         {
             "BlockIn": "4",
@@ -278,6 +212,30 @@
             "NumberPortOut": "2"
         },
         {
+            "BlockIn": "13",
+            "NumberPortIn": "1",
+            "BlockOut": "15",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "17",
+            "NumberPortIn": "1",
+            "BlockOut": "15",
+            "NumberPortOut": "2"
+        },
+        {
+            "BlockIn": "11",
+            "NumberPortIn": "2",
+            "BlockOut": "5",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "5",
+            "NumberPortIn": "2",
+            "BlockOut": "3",
+            "NumberPortOut": "1"
+        },
+        {
             "BlockIn": "7",
             "NumberPortIn": "1",
             "BlockOut": "10",
@@ -294,6 +252,48 @@
             "NumberPortIn": "1",
             "BlockOut": "4",
             "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "8",
+            "NumberPortIn": "1",
+            "BlockOut": "17",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "14",
+            "NumberPortIn": "1",
+            "BlockOut": "17",
+            "NumberPortOut": "2"
+        },
+        {
+            "BlockIn": "5",
+            "NumberPortIn": "1",
+            "BlockOut": "1",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "17",
+            "NumberPortIn": "2",
+            "BlockOut": "16",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "12",
+            "NumberPortIn": "1",
+            "BlockOut": "16",
+            "NumberPortOut": "2"
+        },
+        {
+            "BlockIn": "15",
+            "NumberPortIn": "1",
+            "BlockOut": "11",
+            "NumberPortOut": "1"
+        },
+        {
+            "BlockIn": "16",
+            "NumberPortIn": "1",
+            "BlockOut": "11",
+            "NumberPortOut": "2"
         }
     ]
 }

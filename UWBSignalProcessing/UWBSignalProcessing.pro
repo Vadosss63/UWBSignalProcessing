@@ -1,21 +1,15 @@
 TARGET = UWBSignalProcessing
 TEMPLATE = app
 
-CONFIG += rtti c++17
-CONFIG += precompile_header
+CONFIG += rtti c++20
 
-QT += core gui
-QT += network xml sql
-QT += widgets
+QT += core gui widgets
 DEFINES += HAVE_QT5
 
 win32:RC_ICONS = icon.ico
 
 unix:DESTDIR = $${files(/home/*)}/UWB
 win32:DESTDIR = $$PWD/../UWB
-
-# Use Precompiled headers (PCH)
-PRECOMPILED_HEADER  = stable.h
 
 include(unix_libs.pri)
 include(win_libs.pri)
@@ -58,8 +52,7 @@ HEADERS += \
     Intefaces/moduleconnectports.h \
     MainWindow/selectpanel.h \
     MainWindow/schemewindow.h \
-    MainWindow/schemaview.h \
-    DSPMLib/Tools/target.h
+    MainWindow/schemaview.h
 
 SOURCES += \
     Tools/operationmanager.cpp \
@@ -75,7 +68,6 @@ SOURCES += \
     MainWindow/lineconnect.cpp \
     MainWindow/schemewindow.cpp \
     MainWindow/selectpanel.cpp \
-    MainWindow/schemaview.cpp \
-    DSPMLib/Tools/target.cpp
+    MainWindow/schemaview.cpp
 
 RESOURCES = UWBSignalProcessing.qrc
