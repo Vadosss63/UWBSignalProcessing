@@ -14,5 +14,4 @@ HEADERS += \
     readcomplexdialogbox.h \
     readcomplexmodule.h
 
-
 DISTFILES += readcomplexblock.json

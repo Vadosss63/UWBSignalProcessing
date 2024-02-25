@@ -14,5 +14,4 @@ HEADERS += \
     varydialogbox.h \
     varymodule.h
 
-
 DISTFILES += varyblock.json

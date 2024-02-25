@@ -1,4 +1,3 @@
-
 TARGET = SplitterBlock
 
 include(../../include.pri)
@@ -14,6 +13,5 @@ HEADERS += \
     splitterblock.h \
     splitterdialogbox.h \
     splittermodule.h
-
 
 DISTFILES += splitterblock.json

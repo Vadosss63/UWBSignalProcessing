@@ -6,14 +6,11 @@ QT += network
 
 DESTDIR = $$SOURCE_PATH
 
-INCLUDEPATH += $$PWD/../../../../UtilityUWB
-DEPENDPATH += $$PWD/../../../../UtilityUWB
+INCLUDEPATH += $${PATH_TO_API}/../UtilityUWB
+DEPENDPATH += $${PATH_TO_API}/../UtilityUWB
 
-INCLUDEPATH += $$PWD/../../../DSPMLib/Tools
-DEPENDPATH += $$PWD/../../../DSPMLib/Tools
-
-INCLUDEPATH += $$PWD/../../../DataProtocol
-DEPENDPATH += $$PWD/../../../DataProtocol
+INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Tools
+DEPENDPATH += $${PATH_TO_API}/DSPMLib/Tools
 
 INCLUDEPATH += $$PWD/Reciver/UserInterfaceReciver
 DEPENDPATH += $$PWD/Reciver/UserInterfaceReciver
@@ -25,27 +22,27 @@ SOURCES += \
     adcblock.cpp \
     adcdialogbox.cpp \
     adcmodule.cpp \
-    ../../../../UtilityUWB/networkuwb.cpp \
-    ../../../../UtilityUWB/errorcodeboost.cpp \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.cpp \
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.cpp \
     Reciver/UserInterfaceReciver/ptreecommands.cpp \
     Reciver/UserInterfaceReciver/ptreecommandswriter.cpp \
     Reciver/UserInterfaceReciver/rs485dialogbox.cpp \
     Reciver/Commands/controlword.cpp \
-    ../../../Tools/crc16.cpp \
-    ../../../../UtilityUWB/ptreewr.cpp
+    $${PATH_TO_API}/Tools/crc16.cpp \
+    $${PATH_TO_API}/../UtilityUWB/ptreewr.cpp
 
 HEADERS += \
     adcblock.h \
     adcdialogbox.h \
     adcmodule.h \
-    ../../../../UtilityUWB/networkuwb.h \
-    ../../../../UtilityUWB/errorcodeboost.h \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.h \
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.h \
     Reciver/UserInterfaceReciver/ptreecommands.h \
     Reciver/UserInterfaceReciver/ptreecommandswriter.h \
     Reciver/UserInterfaceReciver/rs485dialogbox.h \
     Reciver/Commands/controlword.h \
-    ../../../Tools/crc16.h \
-    ../../../../UtilityUWB/ptreewr.h
+    $${PATH_TO_API}/Tools/crc16.h \
+    $${PATH_TO_API}/../UtilityUWB/ptreewr.h
 
 DISTFILES += adcblock.json
 

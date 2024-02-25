@@ -1,4 +1,3 @@
-
 TARGET = TotalDifferenceblock
 
 include(../../include.pri)

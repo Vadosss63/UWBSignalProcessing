@@ -4,8 +4,6 @@ include(../../include.pri)
 
 DESTDIR = $$SINK_PATH
 
-INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Sink
-DEPENDPATH += $${PATH_TO_API}/DSPMLib/Sink
 INCLUDEPATH += $${PATH_TO_API}/../UtilityUWB
 DEPENDPATH += $${PATH_TO_API}/../UtilityUWB
 INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Tools

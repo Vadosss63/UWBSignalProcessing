@@ -1,10 +1,8 @@
 TARGET = ScanSceneBlock
+
 include(../../include.pri)
 
 DESTDIR = $$SINK_PATH
-
-INCLUDEPATH += $$PWD/../../../DSPMLib/Sink
-DEPENDPATH += $$PWD/../../../DSPMLib/Sink
 
 QT += opengl
 
@@ -30,5 +28,4 @@ HEADERS += \
 
 DISTFILES += scansceneblock.json
 
-FORMS += \
-    panelscan.ui
+FORMS += panelscan.ui

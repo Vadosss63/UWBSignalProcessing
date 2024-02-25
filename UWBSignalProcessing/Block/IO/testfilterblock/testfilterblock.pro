@@ -21,7 +21,6 @@ HEADERS += \
     filterview.h \
     $${PATH_TO_API}/DSPMLib/Tools/signalprocessing.h
 
-
 DISTFILES += testfilterblock.json
 
 FORMS += \

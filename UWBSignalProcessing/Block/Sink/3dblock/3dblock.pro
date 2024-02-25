@@ -1,20 +1,17 @@
 TARGET = 3DBlock
-QT += opengl
 
-win32: LIBS += -lglu32 -lopengl32
 include(../../include.pri)
 
-DESTDIR = $$SINK_PATH
+QT += opengl
+win32: LIBS += -lglu32 -lopengl32
 
-INCLUDEPATH += $$PWD/../../../DSPMLib/Sink
-DEPENDPATH += $$PWD/../../../DSPMLib/Sink
+DESTDIR = $$SINK_PATH
 
 SOURCES += \
     3dblock.cpp \
     3ddialogbox.cpp \
     3dmodule.cpp \
     arrayvertex.cpp
-    #scopewidgetopgl.cpp
 
 HEADERS += \
     3dblock.h \
@@ -22,6 +19,5 @@ HEADERS += \
     3dmodule.h \
     arrayvertex.h \
     interface.h
-    #scopewidgetopgl.h
 
 DISTFILES += 3dblock.json

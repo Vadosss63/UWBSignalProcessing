@@ -14,5 +14,4 @@ HEADERS += \
     smadialogbox.h \
     smamodule.h
 
-
 DISTFILES += smablock.json

@@ -1,14 +1,12 @@
 TARGET = 3DTargetBlock
 
+include(../../include.pri)
+
 QT += opengl
 win32: LIBS += -lglu32 -lopengl32
 
-include(../../include.pri)
-
 DESTDIR = $$SINK_PATH
 
-INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Sink
-DEPENDPATH += $${PATH_TO_API}/DSPMLib/Sink
 INCLUDEPATH += $${PATH_TO_API}/DSPMLib/Tools
 DEPENDPATH += $${PATH_TO_API}/DSPMLib/Tools
 
@@ -28,5 +26,4 @@ HEADERS += \
     3dtargetmodule.h\
     $${PATH_TO_API}/DSPMLib/Tools/target.h
 
-DISTFILES += \
-    3dtargetblock.json
+DISTFILES += 3dtargetblock.json

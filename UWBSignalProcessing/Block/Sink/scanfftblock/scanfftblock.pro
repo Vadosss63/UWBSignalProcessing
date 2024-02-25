@@ -1,10 +1,8 @@
 TARGET = ScanfftBlock
+
 include(../../include.pri)
 
 DESTDIR = $$SINK_PATH
-
-INCLUDEPATH += $$PWD/../../../DSPMLib/Sink
-DEPENDPATH += $$PWD/../../../DSPMLib/Sink
 
 SOURCES += \
     scanfftblock.cpp \

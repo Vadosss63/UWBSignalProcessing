@@ -14,5 +14,4 @@ HEADERS += \
     twogaindialogbox.h \
     twogainmodule.h
 
-
 DISTFILES += twogainblock.json

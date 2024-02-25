@@ -14,5 +14,4 @@ HEADERS += \
     maskfilterdialogbox.h \
     maskfiltermodule.h
 
-
 DISTFILES += maskfilterblock.json

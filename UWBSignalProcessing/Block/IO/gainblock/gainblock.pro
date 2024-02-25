@@ -14,5 +14,4 @@ HEADERS += \
     gaindialogbox.h \
     gainmodule.h
 
-
 DISTFILES += gainblock.json

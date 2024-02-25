@@ -20,6 +20,5 @@ HEADERS += \
     $${PATH_TO_API}/DSPMLib/Tools/target.h\
     $${PATH_TO_API}/DSPMLib/Tools/autodatagram.h
 
-
 DISTFILES += \
     readtargetblock.json

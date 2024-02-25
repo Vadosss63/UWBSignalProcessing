@@ -14,5 +14,4 @@ HEADERS += \
     gaussiannoisesourcedialogbox.h \
     gaussiannoisesourcemodule.h
 
-
 DISTFILES += gaussiannoisesourceblock.json

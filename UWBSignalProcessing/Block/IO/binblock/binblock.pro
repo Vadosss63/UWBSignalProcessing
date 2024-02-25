@@ -14,5 +14,4 @@ HEADERS += \
     bindialogbox.h \
     binmodule.h
 
-
 DISTFILES += binblock.json

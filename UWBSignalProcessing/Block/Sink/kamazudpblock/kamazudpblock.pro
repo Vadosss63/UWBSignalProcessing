@@ -4,10 +4,8 @@ include(../../include.pri)
 
 DESTDIR = $$SINK_PATH
 
-INCLUDEPATH += $$PWD/../../../DSPMLib/Sink
-DEPENDPATH += $$PWD/../../../DSPMLib/Sink
-INCLUDEPATH += $$PWD/../../../../UtilityUWB
-DEPENDPATH += $$PWD/../../../../UtilityUWB
+INCLUDEPATH += $${PATH_TO_API}/../UtilityUWB
+DEPENDPATH += $${PATH_TO_API}/../UtilityUWB
 
 SOURCES += \
     kamazudpblock.cpp \

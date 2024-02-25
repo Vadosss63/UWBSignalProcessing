@@ -4,23 +4,19 @@ include(../../include.pri)
 
 DESTDIR = $$SOURCE_PATH
 
-INCLUDEPATH += $$PWD/../../../../UtilityUWB
-DEPENDPATH += $$PWD/../../../../UtilityUWB
+INCLUDEPATH += $${PATH_TO_API}/../UtilityUWB
+DEPENDPATH += $${PATH_TO_API}/../UtilityUWB
 
 SOURCES += \
-    ../../../../UtilityUWB/networkuwb.cpp \
-    ../../../../UtilityUWB/errorcodeboost.cpp \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.cpp \
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.cpp \
     receiverudpblock.cpp \
     receiverudpmodule.cpp
 
-
 HEADERS += \
-    ../../../../UtilityUWB/networkuwb.h \
-    ../../../../UtilityUWB/errorcodeboost.h \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.h \
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.h \
     receiverudpblock.h \
     receiverudpmodule.h
 
-
-
-DISTFILES += \
-    receiverudpblock.json
+DISTFILES += receiverudpblock.json

@@ -14,5 +14,4 @@ HEADERS += \
     phaserdialogbox.h \
     phasermodule.h
 
-
 DISTFILES += phaserblock.json

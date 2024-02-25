@@ -14,5 +14,4 @@ HEADERS += \
     varygaindialogbox.h \
     varygainmodule.h
 
-
 DISTFILES += varygainblock.json

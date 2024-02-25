@@ -4,7 +4,6 @@ include(../../include.pri)
 
 DESTDIR = $$IO_PATH
 
-
 SOURCES += \
     accumulationdualblock.cpp \
     accumulationdualdialogbox.cpp \

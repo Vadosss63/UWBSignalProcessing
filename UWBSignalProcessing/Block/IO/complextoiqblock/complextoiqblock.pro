@@ -1,4 +1,3 @@
-
 TARGET = ComplexToIQblock
 
 include(../../include.pri)

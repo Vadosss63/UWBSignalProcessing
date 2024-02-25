@@ -14,5 +14,4 @@ HEADERS += \
     singeneratordialogbox.h \
     singeneratormodule.h
 
-
 DISTFILES += singeneratorblock.json

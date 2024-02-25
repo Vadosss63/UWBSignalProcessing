@@ -4,22 +4,19 @@ include(../../include.pri)
 
 DESTDIR = $$SINK_PATH
 
-INCLUDEPATH += $$PWD/../../../DSPMLib/Sink
-DEPENDPATH += $$PWD/../../../DSPMLib/Sink
-INCLUDEPATH += $$PWD/../../../../UtilityUWB
-DEPENDPATH += $$PWD/../../../../UtilityUWB
+INCLUDEPATH += $${PATH_TO_API}/../UtilityUWB
+DEPENDPATH += $${PATH_TO_API}/../UtilityUWB
 
 SOURCES += \
     transmitterudpblock.cpp \
     transmitterudpmodule.cpp \
-    ../../../../UtilityUWB/errorcodeboost.cpp \
-    ../../../../UtilityUWB/networkuwb.cpp \
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.cpp \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.cpp \
 
 HEADERS += \
     transmitterudpblock.h \
     transmitterudpmodule.h \
-    ../../../../UtilityUWB/errorcodeboost.h \
-    ../../../../UtilityUWB/networkuwb.h
-
+    $${PATH_TO_API}/../UtilityUWB/errorcodeboost.h \
+    $${PATH_TO_API}/../UtilityUWB/networkuwb.h
 
 DISTFILES += transmitterudpblock.json

@@ -15,7 +15,7 @@ SOURCES += \
     $${PATH_TO_API}/../UtilityUWB/errorcodeboost.cpp \
     receiverautoudpblock.cpp \
     receiverautoudpmodule.cpp \
-    ../../../DSPMLib/Tools/target.cpp
+    $${PATH_TO_API}/DSPMLib/Tools/target.cpp
 
 
 HEADERS += \

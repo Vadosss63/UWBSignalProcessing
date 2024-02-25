@@ -14,5 +14,4 @@ HEADERS += \
     diffdialogbox.h \
     diffmodule.h
 
-
 DISTFILES += diffblock.json
